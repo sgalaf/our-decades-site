@@ -19,7 +19,7 @@
 <style>
 :root{--bg:#000000;--surface:#1C1C1E;--text:#F7F7F8;--text2:#A4A3AE;--accent:#B4A2FF;--tint:#241D45;
   --wash1:#2A1960;--wash2:#3E1238;--main:linear-gradient(90deg,#D62A84,#6A45F5);
-  --ink:linear-gradient(90deg,#FF6DB3,#B4A2FF);--line:rgba(255,255,255,.1);color-scheme:dark}
+  --ink:linear-gradient(90deg,#FF6DB3,#B4A2FF);--line:rgba(255,255,255,.1);--warn:#FF9AB8;color-scheme:dark}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--text);overflow-x:clip;
@@ -38,6 +38,15 @@ a{color:var(--accent)}
 .pill.main{background:var(--main);color:#FFFFFF}
 .pill.small{min-height:44px;padding:0 18px;font-size:15px;white-space:nowrap}
 .pill:active{opacity:.85}
+.notify{display:flex;flex-wrap:wrap;gap:10px;width:100%;max-width:540px}
+.notify [hidden]{display:none!important}
+.notify input[type=email]{flex:1 1 220px;min-width:0;min-height:52px;padding:0 22px;border-radius:999px;font:inherit;
+  font-size:17px;color:var(--text);background:var(--surface);border:1px solid var(--line)}
+.notify input[type=email]::placeholder{color:var(--text2)}
+.notify .pill{flex:0 0 auto;border:0;font:inherit;font-weight:600;cursor:pointer}
+.notify .pill:disabled{opacity:.6}
+.notify .done{flex-basis:100%;margin:0;font-size:19px;font-weight:600;color:var(--text)}
+.notify .err{flex-basis:100%;margin:0;font-size:15px;color:var(--warn)}
 .brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;
   font:800 18px/1 ui-rounded,"SF Pro Rounded",system-ui,sans-serif}
 .brand img{width:32px;height:32px;border-radius:8px}
@@ -229,7 +238,7 @@ h2{font-size:clamp(28px,4.4vw,46px);line-height:1.08}
 </style></head><body>
 
 <header class="nav"><div class="wrap"><a class="brand" href="#top"><img src="/home/icon-64.png" alt="" width="32"
-height="32">Our Decades</a><a class="pill main small get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me</a></div></header>
+height="32">Our Decades</a><a class="pill main small get" href="#notify">Email me</a></div></header>
 
 <main id="top">
 <section class="hero" style="padding:0"><div class="wrap">
@@ -238,7 +247,7 @@ height="32">Our Decades</a><a class="pill main small get" href="mailto:hello@our
     <h1>Scan the family album. Get every photo back <span class="ink">restored</span></h1>
     <p class="sub">Point your iPhone at an album page. Every photo on it is cut out, straightened and restored: fading,
     scratches and dust, fixed for you</p>
-    <div class="cta" id="herocta"><a class="pill main get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me when it’s live</a><span class="note"><b>Coming to the App Store this week</b><br>Your first 15 photos are free</span></div>
+    <div class="cta" id="herocta"><form class="notify" id="notify" action="https://api.our-decades.com/notify" method="post"><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Your email" aria-label="Your email"><input type="hidden" name="from" value="hero"><button class="pill main get" type="submit">Email me when it’s live</button><p class="done" role="status" hidden>Thanks. We’ll email you the day it’s live</p><p class="err" role="alert" hidden></p></form><span class="note"><b>Coming to the App Store this week</b><br>Your first 15 photos are free</span></div>
   </div>
   <div class="phone" role="img" aria-label="An iPhone showing a creased old print being restored">
     <div class="bar"></div>
@@ -314,17 +323,17 @@ height="32">Our Decades</a><a class="pill main small get" href="mailto:hello@our
 </div></div></section>
 
 <section id="faq" style="padding-top:0"><div class="wrap"><div class="head"><h2>Questions</h2></div>
-  <div class="faq"><details><summary>Is it really free?</summary><p>Your first 15 photos are free: restored, and yours to keep. You can start without signing in. Free photos you save or share carry a small “Made with Our Decades” mark; the yearly plan or the 100 photos removes it</p></details><details><summary>Do I need a scanner?</summary><p>No. Your iPhone’s camera is the scanner. Point it at a whole album page and every print on it becomes its own photo. Old pictures already on your iPhone, or in a WhatsApp chat, work too</p></details><details><summary>Will it change how people look?</summary><p>The restore is made to keep every face theirs, and we’d rather do less than turn someone into a stranger. The original scan is always kept: hold a photo to see it</p></details><details><summary>How do I cancel, or delete everything?</summary><p>Cancel the yearly plan any time in your iPhone’s Settings, under your name, then Subscriptions. What you made stays yours. To remove your account and every photo, story and video: Settings in the app, “Delete my account and photos”. Deleted means deleted</p></details><details><summary>When can I get it?</summary><p>Our Decades is coming to the App Store this week, on iPhone, in the United States. Write to <a href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">hello@our-decades.com</a> and we’ll tell you the day it’s live</p></details></div></div></section>
+  <div class="faq"><details><summary>Is it really free?</summary><p>Your first 15 photos are free: restored, and yours to keep. You can start without signing in. Free photos you save or share carry a small “Made with Our Decades” mark; the yearly plan or the 100 photos removes it</p></details><details><summary>Do I need a scanner?</summary><p>No. Your iPhone’s camera is the scanner. Point it at a whole album page and every print on it becomes its own photo. Old pictures already on your iPhone, or in a WhatsApp chat, work too</p></details><details><summary>Will it change how people look?</summary><p>The restore is made to keep every face theirs, and we’d rather do less than turn someone into a stranger. The original scan is always kept: hold a photo to see it</p></details><details><summary>How do I cancel, or delete everything?</summary><p>Cancel the yearly plan any time in your iPhone’s Settings, under your name, then Subscriptions. What you made stays yours. To remove your account and every photo, story and video: Settings in the app, “Delete my account and photos”. Deleted means deleted</p></details><details><summary>When can I get it?</summary><p>Our Decades is coming to the App Store this week, on iPhone, in the United States. <a href="#notify">Leave your email</a> and we’ll tell you the day it’s live</p></details></div></div></section>
 
 <section class="final"><div class="wrap">
   <h2 class="reveal">Start with one page</h2>
   <p class="dim reveal" style="margin-top:12px;font-size:19px">Your first 15 photos are free. No sign-in to start</p>
-  <div class="cta"><a class="pill main get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me when it’s live</a><span class="note">Coming to the App Store this week</span></div>
+  <div class="cta"><form class="notify" action="https://api.our-decades.com/notify" method="post"><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Your email" aria-label="Your email"><input type="hidden" name="from" value="final"><button class="pill main get" type="submit">Email me when it’s live</button><p class="done" role="status" hidden>Thanks. We’ll email you the day it’s live</p><p class="err" role="alert" hidden></p></form><span class="note">Coming to the App Store this week</span></div>
 </div></section>
 </main>
 <footer><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/support">Support</a></div>
 <p>Our Decades is on iPhone, in the United States · © 2026 Redwood Oaks LLC</p></footer>
-<div class="stick" id="stick"><span>Our Decades<br><span class="dim" style="font-weight:400">Coming to the App Store this week</span></span><a class="pill main small get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me</a></div>
+<div class="stick" id="stick"><span>Our Decades<br><span class="dim" style="font-weight:400">Coming to the App Store this week</span></span><a class="pill main small get" href="#notify">Email me</a></div>
 <script>
 (function(){
   var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -362,6 +371,19 @@ height="32">Our Decades</a><a class="pill main small get" href="mailto:hello@our
   document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
     document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
     document.querySelectorAll('[data-pane]').forEach(function(p){p.hidden=p.getAttribute('data-pane')!==b.getAttribute('data-tab')})})});
+  // "Email me when it's live": saved on our server, answered on the page (no mail app needed)
+  document.querySelectorAll('form.notify').forEach(function(f){f.addEventListener('submit',function(ev){
+    ev.preventDefault();var b=f.querySelector('button'),err=f.querySelector('.err');b.disabled=true;err.hidden=true;
+    fetch(f.action+'?js=1',{method:'POST',body:new URLSearchParams(new FormData(f))})
+      .then(function(r){if(!r.ok)throw r;return r.json()})
+      .then(function(){document.querySelectorAll('form.notify').forEach(function(g){
+        g.querySelectorAll('input,button').forEach(function(x){x.hidden=true});g.querySelector('.done').hidden=false})})
+      .catch(function(r){b.disabled=false;err.textContent=r&&r.status===422?'That email doesn’t look right':
+        'That didn’t go through. Try again';err.hidden=false})})});
+  document.querySelectorAll('a[href="#notify"]').forEach(function(a){a.addEventListener('click',function(ev){
+    var box=document.getElementById('notify');if(!box)return;ev.preventDefault();
+    box.scrollIntoView({behavior:rm?'auto':'smooth',block:'center'});
+    var i=box.querySelector('input[type=email]');if(i&&!i.hidden)i.focus({preventScroll:true})})});
   // the bottom bar on a phone, once the first button has scrolled away
   var s=document.getElementById('stick');
   new IntersectionObserver(function(es){s.classList.toggle('on',!es[0].isIntersecting)}).observe(document.getElementById('herocta'));

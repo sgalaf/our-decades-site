@@ -4,52 +4,179 @@
 <meta name="description" content="Your photos are never used to train AI.">
 <meta property="og:site_name" content="Our Decades"><meta property="og:type" content="website">
 <meta property="og:title" content="Privacy"><meta property="og:description" content="Your photos are never used to train AI.">
-<meta property="og:image" content="https://our-decades.com/preview.jpg"><meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://our-decades.com/preview.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F7F1E6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1A1714" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <style>
-:root{--bg:#F7F1E6;--surface:#FFFBF4;--text:#2A2420;--text2:#6E6359;--accent:#8A570D;--on-accent:#FFFFFF}
-@media (prefers-color-scheme:dark){:root{--bg:#1A1714;--surface:#262119;--text:#F3ECE1;--text2:#B4A999;
-  --accent:#E8A63E;--on-accent:#1A1714}}
+:root{--bg:#FFFFFF;--surface:#F5F4FA;--text:#121218;--text2:#5E5D68;--accent:#6A45F5;--tint:#F0ECFF;
+  --wash1:#EEE6FF;--wash2:#FFE8DC;--main:linear-gradient(90deg,#D62A84,#6A45F5);color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--surface:#1C1C1E;--text:#F7F7F8;--text2:#A4A3AE;
+  --accent:#B4A2FF;--tint:#241D45;--wash1:#2A1960;--wash2:#3E1238}}
+:root.black{--bg:#000000;--surface:#1C1C1E;--text:#F7F7F8;--text2:#A4A3AE;--accent:#B4A2FF;--tint:#241D45;
+  --wash1:#2A1960;--wash2:#3E1238;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",
-  Roboto,sans-serif;-webkit-text-size-adjust:100%}
-main{min-height:100svh;max-width:480px;margin:0 auto;padding:48px 24px 32px;display:flex;flex-direction:column;
-  justify-content:center;text-align:center;gap:16px}
-.mark{width:72px;height:72px;margin:0 auto 8px;border-radius:18px;background:var(--surface);display:grid;
-  place-items:center;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-h1{font:600 30px/1.2 ui-serif,"New York",Georgia,serif;margin:0}
-p{margin:0;color:var(--text2)}
-.soon{margin-top:24px;font-weight:600;color:var(--accent)}
-footer{margin-top:40px;font-size:14px}footer a{color:var(--text2);text-decoration:none;margin:0 8px}
-.doc{text-align:left;justify-content:flex-start}
-.doc h1{font-size:28px;margin-bottom:8px}.doc h2{font:600 19px/1.3 ui-serif,"New York",Georgia,serif;margin:20px 0 4px}
-.doc p,.doc li{color:var(--text)}.doc ul{margin:0;padding-left:20px}
-.button{display:block;margin-top:24px;padding:16px;border-radius:14px;background:var(--accent);color:var(--on-accent);
-  font-weight:600;font-size:18px;text-decoration:none;border:0;width:100%;cursor:pointer}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.4 -apple-system,system-ui,BlinkMacSystemFont,
+  "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+h1,h2,.rounded{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+  font-weight:800;letter-spacing:-.01em;margin:0}
+h1{font-size:30px;line-height:1.15}
+h2{font-size:24px;line-height:1.2}
+p{margin:0}
+.dim{color:var(--text2)}
+a{color:var(--accent)}
+.pill{display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;
+  border:0;font-family:inherit;font-weight:600;font-size:17px;line-height:1.2;text-decoration:none;cursor:pointer;width:100%;
+  -webkit-tap-highlight-color:transparent}
+.pill.main{background:var(--main);color:#FFFFFF}
+.pill.quiet{background:var(--tint);color:var(--accent)}
+.pill.small{min-height:44px;padding:0 18px;font-size:15px;width:auto;white-space:nowrap}
+.pill:active{opacity:.85}
+.col{max-width:480px;margin:0 auto;padding:0 16px}
+footer{padding:32px 16px calc(32px + env(safe-area-inset-bottom));text-align:center;font-size:14px}
+footer a{color:var(--text2);text-decoration:none;margin:0 10px;display:inline-block;min-height:44px;line-height:44px}
+/* simple pages: home, the end card's page */
+.simple{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:48px 16px 24px;
+  max-width:480px;margin:0 auto;text-align:center}
+.simple .pill{margin-top:16px}
+/* privacy, terms */
+.doc{max-width:640px;margin:0 auto;padding:48px 16px 24px}
+.doc h1{margin-bottom:12px}.doc h2{font-size:20px;margin:24px 0 6px}
+.doc p,.doc li{line-height:1.5}.doc ul{margin:0;padding-left:20px}
 </style></head><body><main class="doc">
 <h1>Privacy</h1>
-<p>Your family's photos are yours. Here is everything we do with them.</p>
+<p>Your family's photos are yours. Here is everything we do with them, in plain words.</p>
+<!-- [LAWYER] Effective date and a "last updated" line: add on publishing. -->
+<p>Our Decades is run by Redwood Oaks LLC ("we"), for people in the United States.</p>
+<!-- [LAWYER] Operator: Redwood Oaks LLC, a Texas LLC (Gal, 2026-11-14). Add a postal address? (CalOPPA and several
+state laws ask for a way to reach us besides email). -->
+
 <h2>What we keep</h2>
-<ul><li>The photos you scan or add, and the restored copies we make.</li>
-<li>The stories you record or type, and the names and dates you add.</li>
-<li>Your name, first name, email and profile photo from Apple or Google, if you sign in (Apple shares no photo).
-We keep our own copy of the photo, show it and your name only to you and your family in the app, and send them
-nowhere else. Signing in again updates them; a name you type yourself stays yours.</li></ul>
+<ul>
+<li>The photos you scan or add, the restored copies we make, the backs of prints you scan, and the videos we make
+from them.</li>
+<li>The stories you record or type. A recorded story's voice is kept so your family can play it; its words are
+written down on your iPhone (for a few languages, see <a href="#ai">AI services</a>).</li>
+<li>If you add photos from a WhatsApp chat, only its photos. The rest of the export, with the chat's messages, is
+deleted as soon as the photos are out.</li>
+<li>The names, dates and places you add, your family's name, and the names you give the people in your photos.</li>
+<li>Your name and email from Apple or Google when you sign in (Apple may give us a private relay email), and your
+profile photo from Google (Apple shares no photo). We show your name and photo only to you and your family in the
+app.</li>
+<li>Your plan: Apple tells us what you bought and when it renews. We never see your card.</li>
+<li>For your iPhone: a random id the app makes for it, its notification token if you allow notifications, and
+whether this iPhone already used its free first page (Apple's DeviceCheck keeps that, not the iPhone's identity).</li>
+<li>What happens in the app, like "page scanned" or "plan started", to count how the app is used, and crash
+reports from iOS (where the app stopped, the iPhone model and iOS version; never a photo). Crash reports are kept
+90 days.</li>
+<li>When you tap "Get Our Decades" on an invite page, a scrambled form of your network's address for half an hour,
+so the app can offer that invite when you open it. Never the address itself.</li>
+</ul>
+<p>We don't collect your location. If a photo from your library says where it was taken, we remove that, and the rest
+of the file's details except which way is up, before we store it.</p>
+<!-- [LAWYER] Photos stored before 2026-11-14 (testers only) may still carry location in their file data. A one-time
+clean is possible; say if it's needed. -->
+
+<h2 id="faces">Faces</h2>
+<p>To find the same person across your family's photos and suggest their name, our server makes a "likeness" of each
+face in your photos: a list of numbers that describes the face. It can't be turned back into a picture.</p>
+<ul>
+<li>We make likenesses only after you say yes: the app asks once, before you start ("Find everyone").</li>
+<li>They're made and kept on our own server, used only to suggest names in your own family's photos, never sent to
+any other company, never sold, and never used to train any AI.</li>
+<li>A likeness is deleted when its photo is deleted, when you delete that person, and when you delete your account
+or family. We don't keep it any longer than that.</li>
+<li>To take back your yes: turn off Settings › Recognize faces, or write to privacy@our-decades.com. We then delete
+every likeness made from your photos.</li>
+</ul>
+<!-- [LAWYER] Withdrawing consent (Gal, 2026-11-14): the Settings switch ships in the next app version; the email works
+today and is handled by hand. Is this enough, and does it need a stated response time? -->
+<!-- [LAWYER] BIPA (Illinois), CUBI (Texas), Washington: is the in-app yes enough as written consent (its words are in
+the app, version 2026-11-06)? A written, public retention and destruction schedule (BIPA: destroyed when the purpose
+is met or within 3 years of the person's last use, whichever first): is "deleted with the photo" enough, or do we need
+a 3-year limit for accounts that stop using the app? Likenesses of people who never used the app (relatives in the
+photos) are made under the uploader's yes: is that enough? Likenesses made before 2026-11-06 (testers only) exist. -->
+<p>While a photo is being restored, our server also checks each face in the new version against the original, so
+everyone still looks like themselves. Those checks are not kept.</p>
+
 <h2>Who sees it</h2>
-<ul><li>Only the people in your family on Our Decades, and the people you send things to.</li>
-<li>Restoring happens on our own servers.</li>
-<li>When a photo is brought to life, that photo is sent to our animation service (Kling, through fal.ai) to
-make the video. We ask them to delete it within an hour.</li>
-<li>Your voice is turned into words on your iPhone. The words of a story (never the photo or the voice) are read by Claude, from Anthropic, to suggest names, dates and places for that photo. Anthropic doesn't use them to train its AI.</li>
-<li>Payments go through Apple. We never see your card.</li></ul>
-<h2>What we never do</h2>
-<ul><li>Use your photos to train AI.</li><li>Sell or share your data for ads.</li></ul>
+<ul>
+<li>Only the people in your family on Our Decades, and the people you send things to.</li>
+<li>If you share photos as a link, anyone with that link can see those photos and their dates, nothing else, until you
+stop sharing it (Settings › Shared links).</li>
+<li>An invite link shows your family's name and your first name, never your photos.</li>
+<li>We look at your photos or stories only to fix a problem you tell us about, or when the law requires it.</li>
+</ul>
+<!-- [LAWYER] Staff access: Gal's command center shows each account's name, email and counts (not photos). The
+improvement loop never views users' photos. Confirm the "only to fix a problem you tell us about" promise. -->
+
+<h2 id="ai">AI services</h2>
+<p>Some of the work is done by AI services outside our own servers. Each gets only what its job needs:</p>
+<ul>
+<li><b>fal.ai</b> runs the AI models below for us. Photos go inside the request, not into fal's storage; fal keeps
+no history of the requests, and what it makes is deleted within an hour (we download it at once).</li>
+<li><b>Restoring each new photo:</b> the photo goes to FLUX.3 klein (Black Forest Labs) through fal.ai, or, for some
+group photos, Seedream (ByteDance). If you tap "Not right" and say what's wrong, your words go with it.</li>
+<li><b>Bringing a photo to life, and videos:</b> the photo (two neighbouring photos, for a video) goes to PixVerse
+through fal.ai. If PixVerse is down, we may use Kling (Kuaishou) or MiniMax instead, also through fal.ai.</li>
+<li><b>Writing down a story's voice:</b> your iPhone does this itself in English and most languages. In a language it
+can't (Hebrew, for example), the voice goes to Whisper (OpenAI's open model, run by fal.ai), through a link to our
+storage that stops working after 10 minutes.</li>
+<li><b>Reading a story and a print's back:</b> Claude, from Anthropic, reads a story's words (never its voice or
+the photo) to suggest names, dates and places. If your iPhone can't read the writing on a print's back, a picture of
+the back goes to Claude to read it.</li>
+</ul>
+<p>None of these services may use your photos, voice or words to train their AI.</p>
+<!-- [LAWYER] What backs this sentence today: Anthropic's commercial terms (no training on API data; Anthropic keeps
+API data for a limited time for safety, check the current period). fal.ai: we send "no request history" and a 1-hour
+expiry on results; a written no-training and zero-retention promise from fal is NOT signed yet (code comment in
+packages/media/media/animate/paid.py). Seedream, PixVerse, Kling and MiniMax are other companies' models: fal passes
+the photo to them; ask fal which run on fal's own machines and which go to the maker, and what those makers keep.
+ByteDance, Kuaishou and MiniMax are Chinese companies: is a photo leaving the US through them a problem for a US-only
+launch, and should the page say where processing happens? -->
+
+<h2>Companies that hold data for us</h2>
+<ul>
+<li>Render runs our servers and database (in the US, Ohio).</li>
+<li>Cloudflare R2 stores the files: photos, voices and videos.</li>
+<li>Apple: sign-in, purchases, notifications, and DeviceCheck. Google: sign-in.</li>
+</ul>
+<p>We have no ads and no ad or analytics companies in the app, and we never sell or share your data for ads.</p>
+<!-- [LAWYER] Cloudflare R2's bucket location (not pinned to a region in our setup, check). Data processing terms with
+Render, Cloudflare, fal.ai and Anthropic: standard online terms only. -->
+
+<h2>Making Our Decades better</h2>
+<p>Your photos are never used to train AI: no AI model learns from them. We do use them, on our own server, with what
+you tell us about the results ("Looks good", "Not right"), to improve how we restore: the instructions we give the
+models, the checks a restore must pass, and the tests we grade them with. That stops when the photo is deleted.</p>
+<!-- [LAWYER] This is CLAUDE.md rule 3 (Gal, 2026-11-06): harness, not training. Is "improve our service" with users'
+own photos fine as worded, or does it need a separate yes? -->
+
 <h2>Deleting</h2>
-<p>Settings → Delete my account and photos removes your photos, stories, videos, your profile photo and the families
-you made, from our servers, right away.</p>
+<ul>
+<li>Deleting a photo deletes it, its copies, its videos and its stories' voices.</li>
+<li>Settings › Delete my account and photos deletes your photos, stories, videos, your profile photo, the links you
+shared and the families you made (for everyone in them), and the photos you added to other families. It happens on
+our servers right away, and the files are erased, not hidden. Deleting doesn't cancel a plan: cancel it with Apple
+too.</li>
+<li>What's left after that: counts of what happened in the app, with nothing that links them to you.</li>
+</ul>
+<!-- [LAWYER] Render's daily database backups keep deleted rows until they roll off (check the period for our plan).
+Say so here? -->
+
+<h2>Children</h2>
+<p>Our Decades is for adults. It isn't meant for children under 13, and we don't knowingly collect information from
+them. Family photos can show children; they're seen only by your family and the people you share with.</p>
+<!-- [LAWYER] COPPA: no age check in the app today. The App Store age rating is 4+ (docs/APPSTORE.md). Is "for
+adults" enough, or should the rating or an age question change? -->
+
+<h2>Your rights</h2>
+<p>You can see, change and delete everything in the app. For anything else, or to ask what we hold about you, write to
+us.</p>
+<!-- [LAWYER] State privacy laws (California CCPA/CPRA and others): which apply at our size; the "do not sell or share"
+statement, the categories list and how to make a request. Notifying users of changes to this policy. -->
+
 <h2>Questions</h2>
-<p>privacy@our-decades.com</p>
+<p><a href="mailto:privacy@our-decades.com">privacy@our-decades.com</a></p>
 </main></body></html>

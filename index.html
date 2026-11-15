@@ -1,36 +1,369 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Our Decades: Revive Old Photos</title>
-<meta name="description" content="Revive your family&#x27;s old photos: scan an album, and every photo comes back restored and alive.">
+<meta name="description" content="Scan the family album with your iPhone. Every photo on the page comes back restored. Your first 15 photos are free.">
+<link rel="canonical" href="https://our-decades.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="/home/favicon-32.png">
+<link rel="apple-touch-icon" href="/home/apple-touch-icon.png">
 <meta property="og:site_name" content="Our Decades"><meta property="og:type" content="website">
-<meta property="og:title" content="Our Decades: Revive Old Photos"><meta property="og:description" content="Revive your family&#x27;s old photos: scan an album, and every photo comes back restored and alive.">
-<meta property="og:image" content="https://our-decades.com/preview.jpg"><meta property="og:image:width" content="1200">
+<meta property="og:title" content="Our Decades: Revive Old Photos"><meta property="og:description" content="Scan the family album with your iPhone. Every photo on the page comes back restored. Your first 15 photos are free.">
+<meta property="og:url" content="https://our-decades.com/">
+<meta property="og:image" content="https://our-decades.com/home/og.jpg"><meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="An old family print, half of it restored">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F7F1E6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1A1714" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#000000">
+<link rel="preload" as="image" href="/home/worn.webp" fetchpriority="high">
+<script>document.documentElement.className='js'</script>
 <style>
-:root{--bg:#F7F1E6;--surface:#FFFBF4;--text:#2A2420;--text2:#6E6359;--accent:#8A570D;--on-accent:#FFFFFF}
-@media (prefers-color-scheme:dark){:root{--bg:#1A1714;--surface:#262119;--text:#F3ECE1;--text2:#B4A999;
-  --accent:#E8A63E;--on-accent:#1A1714}}
+:root{--bg:#000000;--surface:#1C1C1E;--text:#F7F7F8;--text2:#A4A3AE;--accent:#B4A2FF;--tint:#241D45;
+  --wash1:#2A1960;--wash2:#3E1238;--main:linear-gradient(90deg,#D62A84,#6A45F5);
+  --ink:linear-gradient(90deg,#FF6DB3,#B4A2FF);--line:rgba(255,255,255,.1);color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",
-  Roboto,sans-serif;-webkit-text-size-adjust:100%}
-main{min-height:100svh;max-width:480px;margin:0 auto;padding:48px 24px 32px;display:flex;flex-direction:column;
-  justify-content:center;text-align:center;gap:16px}
-.mark{width:72px;height:72px;margin:0 auto 8px;border-radius:18px;background:var(--surface);display:grid;
-  place-items:center;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-h1{font:600 30px/1.2 ui-serif,"New York",Georgia,serif;margin:0}
-p{margin:0;color:var(--text2)}
-.soon{margin-top:24px;font-weight:600;color:var(--accent)}
-footer{margin-top:40px;font-size:14px}footer a{color:var(--text2);text-decoration:none;margin:0 8px}
-.doc{text-align:left;justify-content:flex-start}
-.doc h1{font-size:28px;margin-bottom:8px}.doc h2{font:600 19px/1.3 ui-serif,"New York",Georgia,serif;margin:20px 0 4px}
-.doc p,.doc li{color:var(--text)}.doc ul{margin:0;padding-left:20px}
-.button{display:block;margin-top:24px;padding:16px;border-radius:14px;background:var(--accent);color:var(--on-accent);
-  font-weight:600;font-size:18px;text-decoration:none;border:0;width:100%;cursor:pointer}
-</style></head><body><main><div class="mark" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-<rect x="7" y="9" width="22" height="18" rx="2.5" stroke="var(--accent)" stroke-width="2.4"/>
-<rect x="12" y="14" width="22" height="18" rx="2.5" fill="var(--surface)" stroke="var(--accent)" stroke-width="2.4"/>
-<circle cx="19" cy="21" r="2.3" fill="var(--accent)"/><path d="M14 30l6-5 4 3 4-4 5 6" stroke="var(--accent)"
-stroke-width="2.2" stroke-linejoin="round"/></svg></div><h1>Our Decades</h1><p>Revive your family's old photos.</p><p class="soon">Coming soon to iPhone</p><footer><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer></main></body></html>
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--text);overflow-x:clip;
+  font:17px/1.45 -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+h1,h2,h3{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;font-weight:800;
+  letter-spacing:-.015em;margin:0;text-wrap:balance}
+p{margin:0}img,video{display:block;max-width:100%;height:auto}
+a{color:var(--accent)}
+.dim{color:var(--text2)}
+.ink{background:var(--ink);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media (min-width:760px){.wrap{padding:0 32px}}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;
+  border:0;font-family:inherit;font-weight:600;font-size:17px;line-height:1.2;text-decoration:none;cursor:pointer;
+  text-align:center;-webkit-tap-highlight-color:transparent}
+.pill.main{background:var(--main);color:#FFFFFF}
+.pill.small{min-height:44px;padding:0 18px;font-size:15px;white-space:nowrap}
+.pill:active{opacity:.85}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;
+  font:800 18px/1 ui-rounded,"SF Pro Rounded",system-ui,sans-serif}
+.brand img{width:32px;height:32px;border-radius:8px}
+/* worn -> restored, with the scanner's light passing over */
+.sweep{position:relative;overflow:hidden}
+.sweep img{display:block;width:100%;height:100%;object-fit:cover}
+.sweep .after{position:absolute;inset:0;animation:wipeH 8s linear infinite}
+.sweep .beam{position:absolute;top:0;bottom:0;left:0;width:72px;margin-left:-72px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(106,69,245,0),rgba(214,42,132,.35) 55%,rgba(255,255,255,.95));
+  animation:beamH 8s linear infinite}
+@keyframes wipeH{0%,10%{clip-path:inset(0 100% 0 0);opacity:1}46%,90%{clip-path:inset(0 0 0 0);opacity:1}
+  100%{clip-path:inset(0 0 0 0);opacity:0}}
+@keyframes beamH{0%,9.9%{left:0;opacity:0}10%{left:0;opacity:1}46%{left:100%;opacity:1}50%,100%{left:100%;opacity:0}}
+.sweep.v .after{animation-name:wipeV}
+.sweep.v .beam{top:0;left:0;right:0;bottom:auto;width:auto;height:72px;margin:-72px 0 0;
+  background:linear-gradient(180deg,rgba(106,69,245,0),rgba(214,42,132,.35) 55%,rgba(255,255,255,.95));
+  animation-name:beamV}
+@keyframes wipeV{0%,10%{clip-path:inset(0 0 100% 0);opacity:1}46%,90%{clip-path:inset(0 0 0 0);opacity:1}
+  100%{clip-path:inset(0 0 0 0);opacity:0}}
+@keyframes beamV{0%,9.9%{top:0;opacity:0}10%{top:0;opacity:1}46%{top:100%;opacity:1}50%,100%{top:100%;opacity:0}}
+/* Before / After, dragged */
+.ba{position:relative;overflow:hidden;border-radius:18px;background:#1C1C1E;--p:50%;touch-action:pan-y;
+  user-select:none;-webkit-user-select:none}
+.ba img{display:block;width:100%;height:auto;pointer-events:none}
+.ba .after{position:absolute;inset:0;height:100%;object-fit:cover;clip-path:inset(0 0 0 var(--p))}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:#FFFFFF;
+  pointer-events:none}
+.ba .handle::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;
+  border-radius:50%;background:#FFFFFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cpath d='M18 15l-7 7 7 7M26 15l7 7-7 7' fill='none' stroke='%236A45F5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/cover;
+  box-shadow:0 2px 12px rgba(0,0,0,.45)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+.ba input:focus-visible~.handle::after{outline:3px solid #B4A2FF;outline-offset:2px}
+.tag{position:absolute;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.55);color:#FFFFFF;
+  font-size:13px;font-weight:600;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);pointer-events:none}
+.tag.l{left:12px}.tag.r{right:12px}
+/* the album page, every print outlined */
+.album{position:relative;border-radius:18px;overflow:hidden;background:#0B0B0D}
+.album img{width:100%;height:auto}
+.album svg{position:absolute;inset:0;width:100%;height:100%}
+.album polygon{fill:rgba(180,162,255,.14);stroke:#B4A2FF;stroke-width:5;stroke-linejoin:round;stroke-dasharray:1;
+  stroke-dashoffset:0;animation:trace 9s ease-in-out infinite;animation-delay:calc(var(--i) * .28s)}
+@keyframes trace{0%,4%{stroke-dashoffset:1;fill-opacity:0;opacity:1}16%{stroke-dashoffset:0;fill-opacity:0}
+  22%,86%{stroke-dashoffset:0;fill-opacity:1;opacity:1}94%,100%{stroke-dashoffset:0;fill-opacity:1;opacity:0}}
+.album .found{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);white-space:nowrap;
+  padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.6);color:#FFFFFF;font-size:14px;font-weight:600;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);animation:found 9s ease-in-out infinite}
+@keyframes found{0%,36%{opacity:0;transform:translate(-50%,8px)}42%,86%{opacity:1;transform:translate(-50%,0)}
+  94%,100%{opacity:0;transform:translate(-50%,0)}}
+[data-verbs]{display:inline-block;transition:opacity .25s,transform .25s}
+[data-verbs].out{opacity:0;transform:translateY(4px)}
+.livedot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#FFB13D;margin-right:8px;
+  animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+/* questions */
+.faq{max-width:760px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 0;min-height:56px;font-weight:600;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:var(--tint);
+  color:var(--accent);display:grid;place-items:center;font-size:22px;font-weight:500;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 48px 20px 0;color:var(--text2)}
+footer{padding:40px 16px calc(40px + env(safe-area-inset-bottom));text-align:center;font-size:14px;color:var(--text2)}
+footer a{color:var(--text2);text-decoration:none;margin:0 10px;display:inline-block;min-height:44px;line-height:44px}
+footer a:hover{color:var(--text)}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+/* the page itself */
+.nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.hero{background:radial-gradient(90% 70% at 78% 8%,#3E1238 0%,rgba(62,18,56,0) 60%),
+  radial-gradient(100% 90% at 20% 0%,#2A1960 0%,rgba(42,25,96,0) 65%),#000000}
+.hero .wrap{display:grid;gap:40px;padding-top:40px;padding-bottom:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--tint);
+  color:var(--accent);font-size:14px;font-weight:600;margin-bottom:20px}
+h1{font-size:clamp(34px,6.2vw,68px);line-height:1.04;font-weight:900}
+.hero .sub{font-size:clamp(18px,2vw,21px);color:var(--text2);margin:20px 0 28px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.cta .note{font-size:15px;color:var(--text2)}
+.cta .note b{color:var(--text);font-weight:600}
+.phone{position:relative;width:min(300px,72vw);margin:0 auto;padding-bottom:22px;border-radius:46px;background:#000000;
+  border:9px solid #26262B;box-shadow:0 0 0 1px #3A3A42,0 30px 90px rgba(214,42,132,.28),0 10px 70px rgba(106,69,245,.4);
+  overflow:hidden;display:flex;flex-direction:column}
+.phone::before{content:"";position:absolute;top:10px;left:50%;width:84px;height:24px;margin-left:-42px;
+  border-radius:14px;background:#000000;z-index:3}
+.phone .bar{height:52px;flex:none}
+.phone .shot{flex:none;aspect-ratio:640/915;width:100%}
+.phone .status{position:absolute;left:12px;bottom:12px;padding:7px 12px;border-radius:999px;background:rgba(0,0,0,.6);
+  color:#FFFFFF;font-size:12px;font-weight:600;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.phone .chips{display:flex;justify-content:center;gap:8px;padding:14px 0}
+.chip{padding:8px 14px;border-radius:999px;background:#1C1C1E;color:#A4A3AE;font-size:13px;font-weight:600;
+  position:relative;overflow:hidden}
+.chip.r span{position:relative;animation:chipT 8s linear infinite}
+.chip.r::before{content:"";position:absolute;inset:0;background:var(--main);animation:chipOn 8s linear infinite}
+@keyframes chipOn{0%,44%{opacity:0}48%,92%{opacity:1}100%{opacity:0}}
+@keyframes chipT{0%,44%{color:#A4A3AE}48%,92%{color:#FFFFFF}100%{color:#A4A3AE}}
+.phone .hint{text-align:center;font-size:11px;color:#A4A3AE}
+section{padding:72px 0}
+.head{max-width:720px;margin:0 auto 40px;text-align:center}
+h2{font-size:clamp(28px,4.4vw,46px);line-height:1.08}
+.head p{margin-top:14px;color:var(--text2);font-size:19px}
+.steps{display:grid;gap:16px}
+.step{background:var(--surface);border-radius:28px;padding:16px 16px 24px;display:flex;flex-direction:column;gap:16px}
+.step .vis{border-radius:18px;overflow:hidden;aspect-ratio:1023/727;background:#0B0B0D;position:relative}
+.step .vis>*{width:100%;height:100%;border-radius:0}
+.step .vis img,.step .vis video{width:100%;height:100%;object-fit:cover}
+.step .n{width:32px;height:32px;border-radius:50%;background:var(--main);color:#FFFFFF;display:grid;place-items:center;
+  font:800 16px/1 ui-rounded,system-ui,sans-serif;flex:none}
+.step h3{font-size:22px;line-height:1.15;display:flex;gap:10px;align-items:center;padding:0 8px}
+.step p{color:var(--text2);padding:0 8px}
+.step .status{position:absolute;left:10px;bottom:10px;width:auto;height:auto;padding:7px 12px;border-radius:999px;
+  background:rgba(0,0,0,.6);color:#FFFFFF;font-size:12px;font-weight:600}
+.step .prints{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:4px;background:#0B0B0D}
+.step .prints img{border-radius:6px;aspect-ratio:3/4;height:auto}
+.band{background:linear-gradient(135deg,#2A1960,#3E1238);border-radius:28px;padding:36px 24px;text-align:center}
+.band h2{font-size:clamp(26px,3.6vw,38px)}
+.band p{color:#D9D3EE;margin-top:12px;font-size:18px}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tabs button{appearance:none;border:0;min-height:44px;padding:0 18px;border-radius:999px;background:var(--surface);
+  color:var(--text2);font-family:inherit;font-weight:600;font-size:15px;line-height:1;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--tint);color:var(--accent)}
+.proof .ba{margin:0 auto}
+.proof .ba.land{max-width:920px}.proof .ba.port{max-width:440px}
+.proof [hidden]{display:none}
+.checks{display:grid;gap:12px;max-width:920px;margin:28px auto 0;padding:0;list-style:none}
+.checks li{background:var(--surface);border-radius:20px;padding:18px 20px 18px 52px;position:relative;font-weight:600}
+.checks li::before{content:"";position:absolute;left:18px;top:19px;width:22px;height:22px;border-radius:50%;
+  background:var(--main)}
+.checks li::after{content:"";position:absolute;left:25px;top:25px;width:8px;height:5px;border-left:2px solid #FFFFFF;
+  border-bottom:2px solid #FFFFFF;transform:rotate(-45deg)}
+.split{display:grid;gap:28px;align-items:center}
+.split h2{margin-bottom:14px}
+.split p{color:var(--text2);font-size:19px}
+.split .fine{font-size:15px;margin-top:14px}
+.alivebox{position:relative}
+.alivebox video{width:100%;border-radius:18px;background:#1C1C1E}
+.alivebox .tag{background:var(--main)}
+.backcard{position:relative}
+.backcard img{border-radius:18px;width:100%}
+.read{position:relative;margin:-36px 16px 0;background:var(--surface);border-radius:20px;padding:16px 18px;
+  box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.read small{display:block;color:var(--text2);font-size:13px;margin-bottom:4px}
+.read b{font-weight:600;font-size:17px;line-height:1.35;display:block}
+.trio{display:grid;gap:12px;margin-top:40px}
+.trio div{background:var(--surface);border-radius:20px;padding:22px}
+.trio h3{font-size:19px;margin-bottom:6px}.trio p{color:var(--text2);font-size:16px}
+.price{text-align:center}
+.price .line{font-size:19px;color:var(--text2);max-width:760px;margin:16px auto 0}
+.price .line b{color:var(--text);font-weight:600}
+.price .tiles{display:grid;gap:12px;margin:32px auto 0;max-width:640px;text-align:left}
+.tile{background:var(--surface);border-radius:20px;padding:20px 22px}
+.tile .amt{font:900 30px/1 ui-rounded,system-ui,sans-serif;margin-bottom:6px}
+.tile .amt small{font-size:15px;font-weight:600;color:var(--text2)}
+.tile p{color:var(--text2);font-size:15px}.tile h3{font-size:17px;margin-bottom:4px}
+.price .fine{font-size:13px;color:var(--text2);margin-top:20px}
+.privacy{background:var(--surface);border-radius:28px;padding:36px 24px;display:grid;gap:24px}
+.privacy ul{margin:0;padding:0;list-style:none;display:grid;gap:14px;font-size:19px;font-weight:600}
+.privacy li{padding-left:34px;position:relative}
+.privacy li::before{content:"";position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;
+  background:var(--main)}
+.final{text-align:center;background:radial-gradient(80% 100% at 50% 100%,#3E1238 0%,rgba(42,25,96,.6) 45%,
+  rgba(0,0,0,0) 80%)}
+.final .cta{justify-content:center;margin-top:28px}
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(0,0,0,.8);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);display:flex;
+  align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s}
+.stick.on{transform:none}
+.stick span{flex:1;font-size:14px;font-weight:600;line-height:1.25}
+@media (min-width:760px){
+  .hero .wrap{grid-template-columns:1.15fr .85fr;gap:56px;padding-top:64px;padding-bottom:88px;min-height:min(86vh,820px)}
+  .phone{width:320px}
+  section{padding:104px 0}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .band{padding:56px 48px}
+  .checks{grid-template-columns:repeat(3,1fr)}
+  .split{grid-template-columns:1fr 1fr;gap:64px}
+  .split.flip>:first-child{order:2}
+  .trio{grid-template-columns:repeat(3,1fr)}
+  .price .tiles{grid-template-columns:repeat(2,1fr)}
+  .privacy{grid-template-columns:1fr 1.2fr;padding:56px;align-items:center}
+  .stick{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+  .sweep .beam{display:none}.js .reveal{opacity:1;transform:none}html{scroll-behavior:auto}
+  .chip.r::before{opacity:1}.chip.r span{color:#FFFFFF}.album .found{opacity:1}}
+</style></head><body>
+
+<header class="nav"><div class="wrap"><a class="brand" href="#top"><img src="/home/icon-64.png" alt="" width="32"
+height="32">Our Decades</a><a class="pill main small get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me</a></div></header>
+
+<main id="top">
+<section class="hero" style="padding:0"><div class="wrap">
+  <div>
+    <span class="eyebrow" data-thanksgiving>Thanksgiving is November 26</span>
+    <h1>Scan the family album. Get every photo back <span class="ink">restored</span></h1>
+    <p class="sub">Point your iPhone at an album page. Every photo on it is cut out, straightened and restored: fading,
+    scratches and dust, fixed for you</p>
+    <div class="cta" id="herocta"><a class="pill main get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me when it’s live</a><span class="note"><b>Coming to the App Store this week</b><br>Your first 15 photos are free</span></div>
+  </div>
+  <div class="phone" role="img" aria-label="An iPhone showing a creased old print being restored">
+    <div class="bar"></div>
+    <div class="shot sweep v"><img src="/home/worn.webp" alt="" width="640" height="915" fetchpriority="high"><img class="after" src="/home/restored.webp" alt="" width="640" height="915" fetchpriority="high"><i class="beam"></i>
+      <span class="status"><i class="livedot"></i><span data-verbs="Lifting the fade|Clearing the scratches|Clearing the dust|Checking every face">Lifting the fade</span></span></div>
+    <div class="chips"><span class="chip">Original</span><span class="chip r"><span>Restored</span></span></div>
+    <div class="hint">Hold the photo to see the original</div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="head reveal"><h2>A whole page in. Every photo back</h2></div>
+  <div class="steps">
+    <div class="step reveal"><div class="vis"><div class="album" role="img" aria-label="An album page with eight old prints, each one outlined"><img src="/home/page.webp" alt="" width="1023" height="727" loading="lazy" decoding="async"><svg viewBox="0 0 1023 727" preserveAspectRatio="none" aria-hidden="true"><polygon pathLength="1" style="--i:0" points="38,33 232,37 263,341 39,341"/><polygon pathLength="1" style="--i:1" points="252,36 487,36 476,332 281,339"/><polygon pathLength="1" style="--i:2" points="506,38 716,38 715,332 506,338"/><polygon pathLength="1" style="--i:3" points="747,33 957,36 949,345 747,345"/><polygon pathLength="1" style="--i:4" points="38,390 251,384 256,687 46,694"/><polygon pathLength="1" style="--i:5" points="274,394 492,394 498,660 274,668"/><polygon pathLength="1" style="--i:6" points="523,385 732,375 729,687 523,678"/><polygon pathLength="1" style="--i:7" points="789,407 935,412 935,651 783,645"/></svg><span class="found">8 photos found</span></div></div>
+      <h3><span class="n">1</span>Point at a whole page</h3><p>Every print on it is found and becomes its own photo. One
+      scan per page, not per photo</p></div>
+    <div class="step reveal"><div class="vis"><div class="sweep"><img src="/home/gc_before.webp" alt="A faded 1986 color print" width="1200" height="805" loading="lazy" decoding="async"><img class="after" src="/home/gc_after.webp" alt="" width="1200" height="805" loading="lazy" decoding="async"><i class="beam"></i></div>
+      <span class="status"><i class="livedot"></i><span data-verbs="Lifting the fade|Clearing the color cast|Clearing the dust">Lifting the fade</span></span></div>
+      <h3><span class="n">2</span>It restores itself</h3><p>Fading, color casts, scratches and dust. No editing and no
+      settings</p></div>
+    <div class="step reveal"><div class="vis"><div class="prints" role="img" aria-label="The eight prints from the page, each its own restored photo"><img src="/home/r1.webp" alt="" width="300" height="412" loading="lazy" decoding="async"><img src="/home/r2.webp" alt="" width="300" height="388" loading="lazy" decoding="async"><img src="/home/r3.webp" alt="" width="300" height="428" loading="lazy" decoding="async"><img src="/home/r4.webp" alt="" width="300" height="447" loading="lazy" decoding="async"><img src="/home/r5.webp" alt="" width="300" height="430" loading="lazy" decoding="async"><img src="/home/r6.webp" alt="" width="300" height="367" loading="lazy" decoding="async"><img src="/home/r7.webp" alt="" width="300" height="447" loading="lazy" decoding="async"><img src="/home/r8.webp" alt="" width="300" height="470" loading="lazy" decoding="async"></div></div><h3><span class="n">3</span>Keep them, send them</h3><p>Save them to your iPhone, or send them to the family in WhatsApp or Messages</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0" data-thanksgiving-only><div class="wrap"><div class="band reveal">
+  <h2>The albums are at Mom and Dad’s. On November 26, so are you</h2>
+  <p>Bring your iPhone to Thanksgiving. Scan a page between dinner and pie, and pass the phone around</p>
+</div></div></section>
+
+<section id="proof" class="proof"><div class="wrap">
+  <div class="head reveal"><h2>Drag to see what changes</h2><p>Two of our own example prints, restored by the app</p></div>
+  <div class="tabs"><button type="button" aria-pressed="true" data-tab="land">Faded color print, 1986</button><button
+    type="button" aria-pressed="false" data-tab="port">Creased print, early 1900s</button></div>
+  <div class="ba land" data-pane="land"><img src="/home/gc_before.webp" alt="A family at the Grand Canyon in 1986: the print is yellowed and faded" width="1200" height="805" loading="lazy" decoding="async"><img class="after" src="/home/gc_after.webp" alt="The same print restored: blue sky, clear faces" width="1200" height="805" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span
+    class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"></div>
+  <div class="ba port" data-pane="port" hidden><img src="/home/worn.webp" alt="An early 1900s family print with folds, cracks, stains and a torn corner" width="640" height="915" loading="lazy" decoding="async"><img class="after" src="/home/restored.webp" alt="The same print restored, still black and white" width="640" height="915" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span
+    class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"></div>
+  <ul class="checks reveal"><li>Every restored face is checked against the original</li><li>We’d rather do less than
+    turn someone into a stranger</li><li>The original scan is always kept. Hold a photo to see it</li></ul>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="split flip">
+    <div class="reveal"><h2>Even the back gets read</h2><p>Turn a print over and scan its back. The handwriting on it
+      is read and kept with the photo</p></div>
+    <div class="backcard reveal"><img src="/home/back.webp" alt="The back of the print, with handwriting in blue ink" width="800" height="537" loading="lazy" decoding="async">
+      <div class="read"><small>Written on the back</small><b>Grand Canyon, July 1986<br>Mom, Dad, Jenny &amp; Chris</b></div></div>
+  </div>
+  <div class="trio">
+    <div class="reveal"><h3>Tell the story out loud</h3><p>Hold the mic and talk. Your words appear as you speak</p></div>
+    <div class="reveal"><h3>Names and dates, kept</h3><p>Add who is in each photo and when it was taken</p></div>
+    <div class="reveal"><h3>Invite your relatives, free</h3><p>They add their own photos and stories to the same family
+      album</p></div>
+  </div>
+</div></section>
+
+<section id="price" class="price"><div class="wrap">
+  <h2 class="reveal">Your first 15 photos are <span class="ink">free</span></h2>
+  <p class="line reveal">After that: <b>every photo restored for $59.99 a year</b>, or <b>100 photos for $19.99,
+    once</b></p>
+  <div class="tiles">
+    <div class="tile reveal"><div class="amt">$59.99 <small>a year</small></div><h3>Every photo restored</h3><p>Every photo you add, and no mark on what you save or share</p></div>
+    <div class="tile reveal"><div class="amt">$19.99 <small>once</small></div><h3>100 photos</h3><p>No subscription. They never expire</p></div>
+  </div>
+  <p class="fine">The yearly plan renews automatically until you cancel in your iPhone’s Settings</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="privacy reveal">
+  <h2>Your photos stay your family’s</h2>
+  <div><ul><li>Never used to train AI</li><li>Only your family sees them, and the people you send them to</li>
+    <li>Delete everything in Settings. Deleted means deleted</li></ul>
+  <p style="margin-top:18px"><a href="/privacy">Read the privacy policy</a></p></div>
+</div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap"><div class="head"><h2>Questions</h2></div>
+  <div class="faq"><details><summary>Is it really free?</summary><p>Your first 15 photos are free: restored, and yours to keep. You can start without signing in. Free photos you save or share carry a small “Made with Our Decades” mark; the yearly plan or the 100 photos removes it</p></details><details><summary>Do I need a scanner?</summary><p>No. Your iPhone’s camera is the scanner. Point it at a whole album page and every print on it becomes its own photo. Old pictures already on your iPhone, or in a WhatsApp chat, work too</p></details><details><summary>Will it change how people look?</summary><p>Every restored face is checked against the original, and we’d rather do less than turn someone into a stranger. The original scan is always kept: hold a photo to see it</p></details><details><summary>How do I cancel, or delete everything?</summary><p>Cancel the yearly plan any time in your iPhone’s Settings, under your name, then Subscriptions. What you made stays yours. To remove your account and every photo, story and video: Settings in the app, “Delete my account and photos”. Deleted means deleted</p></details><details><summary>When can I get it?</summary><p>Our Decades is coming to the App Store this week, on iPhone, in the United States. Write to <a href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">hello@our-decades.com</a> and we’ll tell you the day it’s live</p></details></div></div></section>
+
+<section class="final"><div class="wrap">
+  <h2 class="reveal">Start with one page</h2>
+  <p class="dim reveal" style="margin-top:12px;font-size:19px">Your first 15 photos are free. No sign-in to start</p>
+  <div class="cta"><a class="pill main get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me when it’s live</a><span class="note">Coming to the App Store this week</span></div>
+</div></section>
+</main>
+<footer><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/support">Support</a></div>
+<p>Our Decades is on iPhone, in the United States · © 2026 Redwood Oaks LLC</p></footer>
+<div class="stick" id="stick"><span>Our Decades<br><span class="dim" style="font-weight:400">Coming to the App Store this week</span></span><a class="pill main small get" href="mailto:hello@our-decades.com?subject=Tell%20me%20when%20Our%20Decades%20is%20on%20the%20App%20Store">Email me</a></div>
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // things that fade in as they scroll into view
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
+    e.target.dispatchEvent(new CustomEvent('inview'));io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  // Before / After sliders: a range input over the picture (touch, mouse and arrow keys)
+  document.querySelectorAll('.ba').forEach(function(ba){
+    var r=ba.querySelector('input'),touched=false;
+    function set(){ba.style.setProperty('--p',r.value+'%')}
+    r.addEventListener('input',function(){touched=true;set()});set();
+    io.observe(ba);
+    ba.addEventListener('inview',function(){ // one nudge so people see it moves
+      if(rm)return;var t0=performance.now();
+      (function step(t){if(touched)return;var k=Math.min((t-t0)/1600,1);
+        r.value=50+Math.sin(k*Math.PI*2)*22*(1-k*.3);set();if(k<1)requestAnimationFrame(step);else{r.value=50;set()}})(t0)});
+  });
+  // the words that change while a photo is restored
+  document.querySelectorAll('[data-verbs]').forEach(function(el){
+    if(rm)return;var v=el.getAttribute('data-verbs').split('|'),i=0;
+    setInterval(function(){el.classList.add('out');setTimeout(function(){i=(i+1)%v.length;el.textContent=v[i];
+      el.classList.remove('out')},260)},1800)});
+  // Thanksgiving (November 26, 2026): a countdown, then gone once it has passed
+  var d=Math.ceil((new Date(2026,10,26)-new Date())/864e5);
+  document.querySelectorAll('[data-thanksgiving]').forEach(function(el){
+    if(d>1)el.textContent='Thanksgiving is in '+d+' days';else if(d===1)el.textContent='Thanksgiving is tomorrow';
+    else if(d===0)el.textContent='Happy Thanksgiving';else el.hidden=true});
+  if(d<0)document.querySelectorAll('[data-thanksgiving-only]').forEach(function(el){el.hidden=true});
+  // videos play only while on screen
+  var vo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting&&!rm){v.play().catch(function(){})}else{v.pause()}})},{threshold:.3});
+  document.querySelectorAll('video').forEach(function(v){vo.observe(v)});
+  // which example print the slider shows
+  document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    document.querySelectorAll('[data-pane]').forEach(function(p){p.hidden=p.getAttribute('data-pane')!==b.getAttribute('data-tab')})})});
+  // the bottom bar on a phone, once the first button has scrolled away
+  var s=document.getElementById('stick');
+  new IntersectionObserver(function(es){s.classList.toggle('on',!es[0].isIntersecting)}).observe(document.getElementById('herocta'));
+})();
+</script></body></html>

@@ -1,12 +1,12 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
+<!doctype html><html lang="en" class="black"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Support · Our Decades</title>
 <meta name="description" content="How to reach us, cancel a plan, or delete everything.">
 <meta property="og:site_name" content="Our Decades"><meta property="og:type" content="website">
 <meta property="og:title" content="Support"><meta property="og:description" content="How to reach us, cancel a plan, or delete everything.">
-<meta property="og:image" content="https://our-decades.com/preview.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image" content="https://our-decades.com/home/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <style>
 :root{--bg:#FFFFFF;--surface:#F5F4FA;--text:#121218;--text2:#5E5D68;--accent:#6A45F5;--tint:#F0ECFF;
@@ -40,16 +40,28 @@ footer a{color:var(--text2);text-decoration:none;margin:0 10px;display:inline-bl
 .simple{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:48px 16px 24px;
   max-width:480px;margin:0 auto;text-align:center}
 .simple .pill{margin-top:16px}
-/* privacy, terms */
+/* privacy, terms, support: always dark like the home and try pages, under a small top bar home */
+.top{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px)}
+.top .in{max-width:640px;margin:0 auto;padding:calc(6px + env(safe-area-inset-top)) 16px 6px;display:flex;
+  align-items:center}
+.top a{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:var(--text);text-decoration:none;
+  font:800 18px/1 ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif}
+.top img{width:32px;height:32px;border-radius:8px}
 .doc{max-width:640px;margin:0 auto;padding:48px 16px 24px}
+.top+.doc{padding-top:20px}
 .doc h1{margin-bottom:12px}.doc h2{font-size:20px;margin:24px 0 6px}
-.doc p,.doc li{line-height:1.5}.doc ul{margin:0;padding-left:20px}
-</style></head><body><main class="doc">
+.doc p,.doc li{line-height:1.5}.doc p+p{margin-top:12px}.doc ul{margin:0;padding-left:20px}
+</style></head><body><header class="top"><div class="in"><a href="/"><img src="/home/icon-64.png" alt="" width="32" height="32">Our Decades</a></div></header><main class="doc">
 <h1>Support</h1>
 <h2 id="contact">Contact</h2>
 <p>Write to us any time: <a href="mailto:hello@our-decades.com">hello@our-decades.com</a></p>
 <h2>What's free</h2>
-<p>The first page you scan is free. Sign in and your next 15 photos are free too.</p>
+<p>The first page you scan is free. Sign in and your next 15 photos are free too. What you
+save or share from them carries a small "Made with Our Decades" mark; a plan or a pack takes it off.</p>
+<h2 id="pack">The 100-photo pack</h2>
+<p>Bought once, it's not a subscription: nothing renews, and its 100 photos never expire. Refunds go through Apple, as
+for the plan (below).</p>
 <h2>Cancel your plan</h2>
 <p>The yearly plan renews through your Apple ID until you cancel it. In the app: Settings › Manage subscription. Or
 on your iPhone: Settings › your name › Subscriptions, or

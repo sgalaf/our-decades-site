@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>See your old photo restored</title>
+<meta name="description" content="Free. No sign-up. Never used to train AI">
+<meta name="robots" content="noindex">
+<meta property="og:site_name" content="Our Decades">
+<meta property="og:type" content="website">
+<meta property="og:title" content="See your old photo restored">
+<meta property="og:description" content="Free. No sign-up. Never used to train AI">
+<meta property="og:image" content="https://api.our-decades.com/invite_after.jpg">
+<meta property="og:url" content="https://our-decades.com/try">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/home/favicon-32.png">
+<style>html,body{margin:0;background:#000;color:#fff;font:17px -apple-system,BlinkMacSystemFont,sans-serif}
+a{color:#fff;display:block;text-align:center;padding:40vh 16px 0}</style>
+<script>
+// our-decades.com/try: the try page runs on our server at try.our-decades.com (this website is fixed pages).
+// ?from=<source> goes through /go/<source>, which counts the tap (docs/growth/TRY_PAGE_PLAN.md section 6).
+(function(){
+  var q=new URLSearchParams(location.search),src=(q.get("from")||"").replace(/[^a-z0-9-]/gi,"").slice(0,40);
+  location.replace("https://try.our-decades.com"+(src?"/go/"+src:"/"+location.search)+location.hash);
+})();
+</script>
+</head>
+<body><a href="https://try.our-decades.com/">See your old photo restored</a></body>
+</html>

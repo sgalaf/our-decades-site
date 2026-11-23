@@ -1,9 +1,9 @@
 <!doctype html><html lang="en" class="black"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Privacy · Our Decades</title>
-<meta name="description" content="Your photos are never used to train AI.">
+<meta name="description" content="We never train AI on your photos.">
 <meta property="og:site_name" content="Our Decades"><meta property="og:type" content="website">
-<meta property="og:title" content="Privacy"><meta property="og:description" content="Your photos are never used to train AI.">
+<meta property="og:title" content="Privacy"><meta property="og:description" content="We never train AI on your photos.">
 <meta property="og:image" content="https://our-decades.com/home/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
@@ -81,7 +81,7 @@ deleted.</li>
 so the app can offer that invite when you open it. Never the address itself.</li>
 <li id="try">If you try one photo on our website: that photo, restored on our server the same way as in the app (see
 <a href="#ai">AI services</a>), and deleted for real within 24 hours, with its restored copies. Only your link shows it.
-It's never used to train AI and never kept for our tests. Choosing the photo agrees to its face check (our
+We never train AI on it, and it's never kept for our tests. Choosing the photo agrees to its face check (our
 <a href="/terms#try">Terms</a>): while it's restored, our server measures each face in it and compares the restored
 face with your print, so everyone still looks like themselves, as in the app (see <a href="#faces">Faces</a>). Those
 measurements are deleted with the photo, within 24 hours. What stays: counts (a photo was tried, how long it took,
@@ -95,16 +95,26 @@ of the file's details except which way is up, before we store it.</p>
 <p>To find the same person across your family's photos and suggest their name, our server makes a "likeness" of each
 face in your photos: a list of numbers that describes the face. It can't be turned back into a picture.</p>
 <ul>
-<li>We make likenesses only after you say yes: the app asks once, before you start ("Find everyone").</li>
-<li>They're made and kept on our own server, used only to suggest names in your own family's photos, never sent to
-any other company, never sold, and never used to train any AI.</li>
+<li>We make likenesses only after you say yes: the app asks once, before you start ("Find everyone"). If you try a
+photo on our website, choosing it is that yes for that one photo (see above), and its likenesses are deleted with it
+within 24 hours.</li>
+<li>They're made on our own server and kept in our database at Render, in the US (Ohio). They're shared with no one:
+used only to suggest names in your own family's photos, never sent to any other company, never sold, and never used
+to train any AI.</li>
+<li>Photos that show faces still go to the <a href="#ai">AI services</a> to be restored and brought to life. A
+likeness never does.</li>
+<li>Saying no doesn't stop restoring: your photos still go to the AI services (the app asks about those separately).
+No likeness is made, and a restore fixes light and color but never touches faces. Bringing a photo to life, the moving
+pictures between photos in a video, and the first surprise animation need the face check, so they're skipped.</li>
 <li>A likeness is deleted when its photo is deleted, when you delete that person, and when you delete your account
 or family. We don't keep it any longer than that.</li>
 <li>To take back your yes: turn off Settings › Recognize faces, or write to privacy@our-decades.com. We then delete
 every likeness made from your photos.</li>
 </ul>
 <p>While a photo is being restored, our server also checks each face in the new version against the original, so
-everyone still looks like themselves. Those checks are not kept.</p>
+everyone still looks like themselves. The measurements of each face are thrown away when the restore ends. We keep
+only counts for each photo (how many faces were checked, how many passed, and why a try was turned down), which can't
+identify anyone.</p>
 
 <h2>Who sees it</h2>
 <ul>
@@ -116,22 +126,27 @@ stop sharing it (Settings › Shared links).</li>
 </ul>
 
 <h2 id="ai">AI services</h2>
-<p>Some of the work is done by AI services outside our own servers. Each gets only what its job needs:</p>
+<p>Some of the work is done by AI services outside our own servers. The app asks you before the first photo goes to
+them, once, naming who gets what ("Agree and continue"). "Not now" sends nothing. Each gets only what its job
+needs:</p>
 <ul>
-<li><b>fal.ai</b> runs the AI models below for us. Photos go inside the request, not into fal's storage; fal keeps
-no history of the requests, and what it makes is deleted within an hour (we download it at once).</li>
-<li><b>Restoring each new photo:</b> the photo goes to FLUX.3 klein (Black Forest Labs) through fal.ai, or, for some
-group photos, Seedream (ByteDance). If you tap "Not right" and say what's wrong, your words go with it.</li>
+<li><b>fal.ai</b> runs the AI models below for us. We send every request with fal's no-storage setting: photos go
+inside the request, never into fal's storage, fal keeps no history of the requests, and what it makes expires within
+the hour (we download it at once).</li>
+<li><b>Restoring each new photo:</b> the photo goes to FLUX.3 klein (Black Forest Labs) through fal.ai. If that model
+can't be used, we may use Seedream (ByteDance) instead, also through fal.ai. If you tap "Not right" and say what's
+wrong, your words go with it.</li>
 <li><b>Bringing a photo to life, and videos:</b> the photo (two neighbouring photos, for a video) goes to PixVerse
-through fal.ai. If PixVerse is down, we may use Kling (Kuaishou) or MiniMax instead, also through fal.ai.</li>
+through fal.ai. If PixVerse is unavailable, we may use Kling (Kuaishou) or MiniMax instead, also through fal.ai.</li>
 <li><b>Writing down a story's voice:</b> your iPhone does this itself in English and most languages. In a language it
 can't (Hebrew, for example), the voice goes to Whisper (OpenAI's open model, run by fal.ai), through a link to our
 storage that stops working after 10 minutes.</li>
-<li><b>Reading a story and a print's back:</b> Claude, from Anthropic, reads a story's words (never its voice or
-the photo) to suggest names, dates and places. If your iPhone can't read the writing on a print's back, a picture of
-the back goes to Claude to read it.</li>
+<li><b>Reading a story and a print's back:</b> Claude, from Anthropic, reads a story's words (typed, or written
+down from your voice; never the voice itself or the photo) to suggest names, dates and places. If your iPhone can't
+read the writing on a print's back, a picture of the back goes to Claude to read it.</li>
 </ul>
-<p>None of these services may use your photos, voice or words to train their AI.</p>
+<p>We never use your photos, voice or words to train AI. Under Anthropic's terms for business customers, Anthropic
+doesn't train its AI on what we send.</p>
 
 <h2>Companies that hold data for us</h2>
 <ul>
@@ -142,7 +157,7 @@ the back goes to Claude to read it.</li>
 <p>We have no ads and no ad or analytics companies in the app, and we never sell or share your data for ads.</p>
 
 <h2>Making Our Decades better</h2>
-<p>Your photos are never used to train AI: no AI model learns from them. We do use them, on our own server, with what
+<p>We never train AI on your photos: no model of ours learns from them. We do use them, on our own server, with what
 you tell us about the results ("Looks good", "Not right"), to improve how we restore: the instructions we give the
 models, the checks a restore must pass, and the tests we grade them with. That stops when the photo is deleted.</p>
 

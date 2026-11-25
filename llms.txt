@@ -1,0 +1,29 @@
+# Our Decades
+
+> Our Decades is an iPhone app that scans old family photo albums and restores the photos. Point the iPhone at an album page: every print on the page becomes its own photo, cut out, straightened and restored (fading, color casts, scratches, dust and creases). It is operated by Redwood Oaks LLC, in the United States.
+
+## Facts
+- Platform: iPhone only, in the United States. Coming soon to the App Store.
+- Free to start: the first 15 photos are free. Prices are on the home page: https://our-decades.com/
+- One old photo can be restored free in an iPhone's browser, with no account: https://try.our-decades.com/
+- It fixes only what's wrong: fading, color casts, scratches, dust and creases. There are no settings.
+- Faces: the AI draws a photo several times, every face in each drawing is compared with the original, and each person gets the drawing most like them. If none is close enough, the face from the original is kept, or only the light and color are fixed. In the app this is the person's choice: without it, a restore fixes light and color and never touches faces.
+- The original is always kept.
+- Names, dates and stories can be recorded by voice and stay with the photo.
+- Privacy: we never train AI on customers' photos. Photos go to our server and to the AI services named in the privacy policy. Only the family sees them, and deleting is real deleting.
+- Contact: hello@our-decades.com
+
+## Guides
+- [How to scan a photo album with your iPhone](https://our-decades.com/guides/scan-photo-album-with-iphone/): Lay the album flat near a window, hold your iPhone level above the page, and photograph each page without flash.
+- [How to fix an old photo that turned yellow or orange](https://our-decades.com/guides/fix-yellowed-or-faded-photo/): The color shift comes from the print's dyes fading at different speeds, and it can be corrected on a scan: the color is rebalanced until whites are white and skin looks like skin again.
+- [How to restore a torn or creased photo](https://our-decades.com/guides/restore-torn-or-creased-photo/): Don't tape it. Scan the print with the torn pieces laid together, and repair the scan: a crease or a clean tear can be made nearly invisible on the copy, while the print itself stays safe in an envelope.
+- [What AI photo restoration can and can't do](https://our-decades.com/guides/what-ai-photo-restoration-can-and-cant-do/): AI restoration is good at damage: fading, color casts, scratches, dust and creases.
+- [What to do with your parents' old photo albums](https://our-decades.com/guides/parents-old-photo-albums/): Scan them before you sort, split or store them, and ask who is in the pictures while someone still knows.
+- [How to save the names and stories behind old photos](https://our-decades.com/guides/save-names-and-stories-behind-old-photos/): Ask now, while someone still knows, and keep the answer with the photo itself.
+
+## Pages
+- [Home](https://our-decades.com/): what the app does, and prices
+- [Restore one photo free](https://try.our-decades.com/): the try page
+- [Support](https://our-decades.com/support/): contact, plans, refunds, deleting
+- [Privacy](https://our-decades.com/privacy/): what we keep, who receives it, deleting
+- [Terms](https://our-decades.com/terms/)

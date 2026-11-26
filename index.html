@@ -189,6 +189,46 @@ footer a:hover{color:var(--text)}
   .dev .after{clip-path:none;opacity:0;transition:opacity .8s!important}.dev.done .after{opacity:1}
   .dev.done.fade .after,.dev.done.orig .after{opacity:0}}
 
+/* a computer (Gal, 2026-11-26: "The sides are empty"): from 960 px the page spreads over a 1120 px area, each section
+   laid out for a wide window; a phone and a narrow window keep the one column above, untouched. No running line wider
+   than about 65 characters, no button wider than 420 px */
+@media (min-width:960px){
+  .wrap{max-width:1184px;padding:0 32px}
+  .pill.wide,.notify{max-width:420px;margin-left:auto;margin-right:auto}
+  /* the hero: the print on the left, as tall as the window allows; the words and both buttons beside it */
+  .glow>.wrap{display:grid;grid-template-columns:auto minmax(0,600px);justify-content:center;align-items:center;
+    column-gap:clamp(48px,5vw,72px)}
+  .glow .hero{width:min(calc(min(72svh,100svh - 168px) * 640 / 915),468px);margin:0}
+  .copy h1{font-size:clamp(46px,4.6vw,64px);text-align:left;margin:0 0 16px!important}
+  .copy .cap{text-align:left;margin:0 0 28px!important}
+  .copy .note,.copy .proof,.copy .notify .done,.copy .notify .err{text-align:left}
+  .copy .pill.wide,.copy .notify{margin-left:0}
+  /* every other heading centered over its section */
+  #gallery h2,#gallery .wrap>.cap,.how h2,.faces .wrap,.who h2,.keep h2,.keep .wrap>p,.why h2,.ask h2{text-align:center}
+  /* the gallery: the small photos centered, the before / after larger and centered under them */
+  #gallery .thumbs{justify-content:center}
+  #gallery .view{max-width:760px;margin-left:auto;margin-right:auto}
+  /* three steps, side by side */
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  /* one shot: the words on the left, the album page on the right */
+  .shot .stack{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;column-gap:64px}
+  /* faces, and why we built it: a reading column */
+  .faces .cap{max-width:540px;margin-left:auto;margin-right:auto;text-wrap:balance}
+  .why .wrap{max-width:604px}
+  /* who it's for: the rows side by side, as many as there are */
+  .rows{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);column-gap:32px}
+  .rows li{border-bottom:1px solid var(--line)}
+  /* the prices: a centered block, what you get in two columns */
+  .price .wrap{max-width:884px}
+  .price .checks.tight{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .price .fine{max-width:460px;margin-left:auto;margin-right:auto;text-wrap:balance}
+  /* privacy: the three points side by side */
+  .keep .checks{grid-template-columns:repeat(3,minmax(0,1fr))}
+  /* the questions in two columns, each one whole with its answer */
+  .ask .wrap{max-width:1104px}
+  .qas{columns:2;column-gap:56px}
+  .qa{break-inside:avoid;padding-top:26px}.qa h3{margin-top:0}}
+
 .shade{position:absolute;inset:0;background:rgba(0,0,0,.24);opacity:0;transition:opacity 1.2s ease-out .3s;
   pointer-events:none}
 .scan .shade{opacity:1}
@@ -204,10 +244,10 @@ height="32"><span>Our Decades</span></a><a class="pill main small" href="https:/
 <section class="glow" style="padding:14px 0 40px"><div class="wrap">
   <div class="hero"><div class="dev" data-words="Opening the old album|Dusting off the decades|Looking twice at each face|Here it comes" data-faces="[[0.515, 0.257], [0.767, 0.251], [0.294, 0.289], [0.145, 0.258], [0.762, 0.567], [0.445, 0.55]]" data-hold="Hold the photo to see the original" role="img"
     aria-label="A creased early-1900s family print being restored"><div class="clip"><img src="/home/worn.webp" alt="A creased 1910s family print, worn and faded" width="640" height="915" fetchpriority="high"><i class="shade" aria-hidden="true"></i><img class="after" src="/home/restored.webp" alt="The same 1910s family print, restored" width="640" height="915" fetchpriority="high"></div><canvas class="fx" aria-hidden="true"></canvas><span class="say"><i></i><span>Opening the old album</span></span></div></div>
-  <h1 class="center" style="margin:30px 0 12px">Old family photos, <span class="ink">restored</span> for you</h1>
+  <div class="copy"><h1 class="center" style="margin:30px 0 12px">Old family photos, <span class="ink">restored</span> for you</h1>
   <p class="cap center" style="margin:0 0 22px">Faded, scratched, turned orange? Watch one of yours come back. Free</p>
   <div id="herocta"><a class="pill main wide" href="https://try.our-decades.com/?from=site-hero">Restore one photo free</a></div><p class="note">No sign-up. About a minute</p>
-  <div class="second"><form class="notify fold" id="notify" action="https://api.our-decades.com/notify" method="post"><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Your email" aria-label="Your email"><input type="hidden" name="from" value="hero"><button class="pill sec" type="submit">Email me when the app is live</button><p class="done" role="status" hidden>Thanks. We’ll email you the day it’s live</p><p class="err" role="alert" hidden></p></form></div>
+  <div class="second"><form class="notify fold" id="notify" action="https://api.our-decades.com/notify" method="post"><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Your email" aria-label="Your email"><input type="hidden" name="from" value="hero"><button class="pill sec" type="submit">Email me when the app is live</button><p class="done" role="status" hidden>Thanks. We’ll email you the day it’s live</p><p class="err" role="alert" hidden></p></form></div></div>
 </div></section>
 
 <section id="gallery" style="padding-top:32px"><div class="wrap">
@@ -218,23 +258,23 @@ height="32"><span>Our Decades</span></a><a class="pill main small" href="https:/
   <a class="pill main wide" href="https://try.our-decades.com/?from=site-gallery">Restore one of yours free</a>
 </div></section>
 
-<section style="padding-top:16px"><div class="wrap">
+<section class="how" style="padding-top:16px"><div class="wrap">
   <h2 style="margin-bottom:18px">Three steps. No scanner</h2>
   <ol class="checks steps"><li>Point your iPhone at the album page<small>Leave the photos where they are</small></li><li>Every photo comes back restored<small>Cut out, straightened, the fading and scratches gone</small></li><li>Keep them, name them, share them<small>Your family sees them free</small></li></ol>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap stack">
+<section class="shot" style="padding-top:0"><div class="wrap stack">
   <div><h2>One shot. Every photo on the page</h2>
   <p class="cap">Point at the whole page and each print becomes its own photo</p></div>
   <div class="album" role="img" aria-label="An album page with eight old prints, each one outlined"><img src="/home/page.webp" alt="An old album page with eight family prints" width="1023" height="727" loading="lazy" decoding="async"><svg viewBox="0 0 1023 727" preserveAspectRatio="none" aria-hidden="true"><polygon pathLength="1" style="--i:0" points="38,33 232,37 263,341 39,341"/><polygon pathLength="1" style="--i:1" points="252,36 487,36 476,332 281,339"/><polygon pathLength="1" style="--i:2" points="506,38 716,38 715,332 506,338"/><polygon pathLength="1" style="--i:3" points="747,33 957,36 949,345 747,345"/><polygon pathLength="1" style="--i:4" points="38,390 251,384 256,687 46,694"/><polygon pathLength="1" style="--i:5" points="274,394 492,394 498,660 274,668"/><polygon pathLength="1" style="--i:6" points="523,385 732,375 729,687 523,678"/><polygon pathLength="1" style="--i:7" points="789,407 935,412 935,651 783,645"/></svg><span class="found">8 photos found</span></div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section class="faces" style="padding-top:0"><div class="wrap">
   <h2>Made to keep every face theirs</h2>
   <p class="cap">We fix the photo, not the person. We’d rather do less than turn someone into a stranger. The original is always kept: hold the photo to see it</p>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section class="who" style="padding-top:0"><div class="wrap">
   <h2>Start where you are</h2>
   <ul class="rows"><li>Your parents’ albums<small>Save them while someone still knows who’s in them</small></li><li>A gift for Mom or Dad<small>Their albums, restored, on their phone and yours</small></li><li>Before a family event<small>The old photos everyone asks about, ready to show</small></li></ul>
 </div></section>
@@ -252,21 +292,21 @@ height="32"><span>Our Decades</span></a><a class="pill main small" href="https:/
   <p class="note" style="color:var(--text);font-weight:600;margin-top:18px">Try before you pay anything</p>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section class="keep" style="padding-top:0"><div class="wrap">
   <h2 style="margin-bottom:18px">Your photos stay your family’s</h2>
   <ul class="checks"><li>We never train AI on them</li><li>Only your family sees them, and the people you send them to</li>
     <li>Delete everything in Settings<small>Deleted means deleted</small></li></ul>
   <p style="margin-top:16px"><a href="/privacy">Read the privacy policy</a></p>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap story">
+<section class="why" style="padding-top:0"><div class="wrap story">
   <h2>Why we built Our Decades</h2>
   <p>Every family has them: albums in a closet, a shoebox of prints. The colors fade a little more each year. And every year there are fewer people who can say who’s in them.</p><p>Scanning them used to mean a weekend with a scanner, or mailing your only copies to a stranger. So most of us never did.</p><p>We built Our Decades so it takes an afternoon: point your phone at the page, and the photos come back. Then ask the people at the table who’s in them, while you still can.</p><p class="sign">The Our Decades team</p>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap faq">
+<section class="ask" style="padding-top:0"><div class="wrap faq">
   <h2>Questions</h2>
-  <h3>Is it really free?</h3><p>One photo on this site is free, with no sign-up. In the app, your first 15 photos are free. After that it’s $19.99 for 100 photos, once, or $59.99 a year.</p><h3>Does it change people’s faces?</h3><p>It’s built not to. We fix fading, color and damage. With your OK, we check that every face is still the same person. Without it, we never touch faces. The original is always kept, one touch away.</p><h3>What happens to my photos?</h3><p>They’re yours. We never train AI on them, only your family sees them, and you can delete everything in Settings. Deleted means deleted. A photo you try on this site is deleted within 24 hours.</p><h3>Do I need a scanner?</h3><p>No. Your iPhone’s camera is enough, and the photos can stay in the album.</p><h3>Does it work on torn or badly damaged photos?</h3><p>Fading, color casts, scratches and dust come out well. A tear across a face is harder; try one free and see before you decide.</p><h3>Is it on Android?</h3><p>Not yet. The app is on iPhone, in the United States.</p><h3>How do I reach you?</h3><p>hello@our-decades.com. A person answers.</p>
+  <div class="qas"><div class="qa"><h3>Is it really free?</h3><p>One photo on this site is free, with no sign-up. In the app, your first 15 photos are free. After that it’s $19.99 for 100 photos, once, or $59.99 a year.</p></div><div class="qa"><h3>Does it change people’s faces?</h3><p>It’s built not to. We fix fading, color and damage. With your OK, we check that every face is still the same person. Without it, we never touch faces. The original is always kept, one touch away.</p></div><div class="qa"><h3>What happens to my photos?</h3><p>They’re yours. We never train AI on them, only your family sees them, and you can delete everything in Settings. Deleted means deleted. A photo you try on this site is deleted within 24 hours.</p></div><div class="qa"><h3>Do I need a scanner?</h3><p>No. Your iPhone’s camera is enough, and the photos can stay in the album.</p></div><div class="qa"><h3>Does it work on torn or badly damaged photos?</h3><p>Fading, color casts, scratches and dust come out well. A tear across a face is harder; try one free and see before you decide.</p></div><div class="qa"><h3>Is it on Android?</h3><p>Not yet. The app is on iPhone, in the United States.</p></div><div class="qa"><h3>How do I reach you?</h3><p>hello@our-decades.com. A person answers.</p></div></div>
 </div></section>
 
 <section class="final"><div class="wrap">

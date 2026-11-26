@@ -15,12 +15,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
 <link rel="preload" as="image" href="/home/worn.webp" fetchpriority="high">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://our-decades.com/#organization", "name": "Our Decades", "legalName": "Redwood Oaks LLC", "url": "https://our-decades.com/", "logo": "https://our-decades.com/home/apple-touch-icon.png", "email": "hello@our-decades.com"}, {"@type": "WebSite", "@id": "https://our-decades.com/#website", "name": "Our Decades", "url": "https://our-decades.com/", "inLanguage": "en-US", "publisher": {"@id": "https://our-decades.com/#organization"}}]}</script>
-<script>document.documentElement.className='js'+(Date.now()>=1795755600000?' tg-over':'')</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://our-decades.com/#organization", "name": "Our Decades", "legalName": "Redwood Oaks LLC", "url": "https://our-decades.com/", "logo": "https://our-decades.com/home/apple-touch-icon.png", "email": "hello@our-decades.com"}, {"@type": "WebSite", "@id": "https://our-decades.com/#website", "name": "Our Decades", "url": "https://our-decades.com/", "inLanguage": "en-US", "publisher": {"@id": "https://our-decades.com/#organization"}}, {"@type": "FAQPage", "@id": "https://our-decades.com/#faq", "mainEntity": [{"@type": "Question", "name": "Is it really free?", "acceptedAnswer": {"@type": "Answer", "text": "One photo on this site is free, with no sign-up. In the app, your first 15 photos are free. After that it’s $19.99 for 100 photos, once, or $59.99 a year."}}, {"@type": "Question", "name": "Does it change people’s faces?", "acceptedAnswer": {"@type": "Answer", "text": "It’s built not to. We fix fading, color and damage. With your OK, we check that every face is still the same person. Without it, we never touch faces. The original is always kept, one touch away."}}, {"@type": "Question", "name": "What happens to my photos?", "acceptedAnswer": {"@type": "Answer", "text": "They’re yours. We never train AI on them, only your family sees them, and you can delete everything in Settings. Deleted means deleted. A photo you try on this site is deleted within 24 hours."}}, {"@type": "Question", "name": "Do I need a scanner?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your iPhone’s camera is enough, and the photos can stay in the album."}}, {"@type": "Question", "name": "Does it work on torn or badly damaged photos?", "acceptedAnswer": {"@type": "Answer", "text": "Fading, color casts, scratches and dust come out well. A tear across a face is harder; try one free and see before you decide."}}, {"@type": "Question", "name": "Is it on Android?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. The app is on iPhone, in the United States."}}, {"@type": "Question", "name": "How do I reach you?", "acceptedAnswer": {"@type": "Answer", "text": "hello@our-decades.com. A person answers."}}]}]}</script>
+<script>document.documentElement.className='js'</script>
 <style>
 :root{--bg:#000000;--surface:#1C1C1E;--surface2:#2A2A2E;--text:#F7F7F8;--text2:#A4A3AE;--accent:#B4A2FF;
   --tint:#241D45;--main:linear-gradient(90deg,#D62A84,#6A45F5);--ink:linear-gradient(90deg,#FF6DB3,#B4A2FF);
-  --line:rgba(255,255,255,.1);--warn:#FF9AB8;--gold:#F2C46B;color-scheme:dark}
+  --line:rgba(255,255,255,.1);--edge:rgba(255,255,255,.22);--warn:#FF9AB8;--gold:#F2C46B;color-scheme:dark}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--text);overflow-x:clip;padding-bottom:84px;
@@ -38,37 +38,40 @@ a{color:var(--accent)}
 section{padding:56px 0}
 .center{text-align:center}
 [hidden]{display:none!important}
-.tg-over [data-tg]{display:none!important}
 /* buttons and the email box */
 .pill{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border-radius:999px;
   border:0;font-family:inherit;font-weight:700;font-size:18px;line-height:1.2;text-decoration:none;cursor:pointer;
   text-align:center;-webkit-tap-highlight-color:transparent;color:#FFFFFF}
 .pill.main{background:var(--main);color:#FFFFFF}
+.pill.sec{background:var(--surface);color:var(--text);border:1px solid var(--edge);font-weight:600;font-size:17px}
 .pill.wide{display:flex;width:100%}
 .pill.small{min-height:44px;padding:0 18px;font-size:15px;white-space:nowrap}
 .pill:active{opacity:.85}
 .pill:disabled{opacity:.6}
 .notify{display:grid;gap:10px;width:100%}
 .notify input[type=email]{min-width:0;min-height:54px;padding:0 22px;border-radius:999px;font:inherit;font-size:18px;
-  color:var(--text);background:var(--surface);border:1px solid rgba(255,255,255,.22)}
+  color:var(--text);background:var(--surface);border:1px solid var(--edge)}
 .notify input[type=email]::placeholder{color:var(--text2)}
+.js .notify.fold input[type=email]{display:none}
 .notify .done{margin:0;font-size:19px;font-weight:700;text-align:center;padding:14px 0}
 .notify .err{margin:0;font-size:15px;color:var(--warn);text-align:center}
 .note{font-size:15px;color:var(--text2);margin-top:12px;text-align:center}
-.note b{color:var(--text);font-weight:600}
+.proof{font-size:15px;font-weight:600;margin-top:8px;text-align:center}
+.second{margin-top:28px}
 .nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(16px);
   backdrop-filter:blur(16px)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
-.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;
-  font:800 18px/1 ui-rounded,"SF Pro Rounded",system-ui,sans-serif}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;height:56px}
+.brand{display:inline-flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;white-space:nowrap;
+  font:800 17px/1 ui-rounded,"SF Pro Rounded",system-ui,sans-serif}
 .brand img{width:32px;height:32px;border-radius:8px}
-.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--tint);
-  color:var(--accent);font-size:14px;font-weight:600}
+/* one main button on screen at a time: on a phone the bar at the bottom carries it (from the moment the first one
+   scrolls away), on a computer the top bar */
+.nav .pill{display:none}
 .glow{background:radial-gradient(90% 60% at 80% 0%,#3E1238 0%,rgba(62,18,56,0) 60%),
   radial-gradient(100% 80% at 15% 0%,#2A1960 0%,rgba(42,25,96,0) 65%),#000000}
 /* a print being restored: "The scan" reads it (app/scan_light.py), the app's own words change, then the restored
    photo opens out from a face, is held, and quietly goes back to the worn print */
-.hero{width:min(100%,calc(42svh * 640 / 915));margin:0 auto}
+.hero{width:min(100%,calc(40svh * 640 / 915));margin:0 auto}
 .dev{position:relative;margin-bottom:22px;touch-action:pan-y;user-select:none;-webkit-user-select:none;
   -webkit-touch-callout:none;aspect-ratio:640/915}
 .dev .clip{position:absolute;inset:0;overflow:hidden;border-radius:18px;background:#111111}
@@ -102,9 +105,24 @@ section{padding:56px 0}
   box-shadow:0 2px 12px rgba(0,0,0,.45)}
 .ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
 .ba input:focus-visible~.handle::after{outline:3px solid #B4A2FF;outline-offset:2px}
-.tag{position:absolute;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#FFFFFF;
+.tag{position:absolute;top:12px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#FFFFFF;
   font-size:13px;font-weight:600;pointer-events:none}
 .tag.l{left:12px}.tag.r{right:12px}
+/* the gallery: the small photos above, like tabs (one row of seven squares), then one large before / after in the
+   photo's own shape, always whole (a portrait one no taller than 70% of the screen, centered); its height changes
+   calmly when another photo is chosen, and nothing moves under the finger */
+.thumbs{display:grid;grid-template-columns:repeat(7,minmax(44px,56px));gap:5px;justify-content:start;margin-top:20px}
+.thumbs button{display:block;aspect-ratio:1;min-height:44px;padding:0;border:0;border-radius:10px;background:none;
+  cursor:pointer;opacity:.5;transition:opacity .2s;-webkit-tap-highlight-color:transparent}
+.thumbs img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.thumbs button[aria-current]{opacity:1}
+.thumbs button[aria-current] img{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--accent)}
+.view{margin-top:16px}
+.pair{margin:0}
+.pair .ba{margin:0 auto}
+.pair:not([hidden]){animation:show .35s ease-out}
+@keyframes show{from{opacity:0}}
+.pair .cap{min-height:1.45em;margin-top:12px;text-align:center}
 /* the album page, every print outlined */
 .album{position:relative;border-radius:18px;overflow:hidden;background:#0B0B0D}
 .album img{width:100%}
@@ -127,23 +145,31 @@ section{padding:56px 0}
   background:var(--main)}
 .checks li::after{content:"";position:absolute;left:23px;top:23px;width:8px;height:5px;border-left:2px solid #FFFFFF;
   border-bottom:2px solid #FFFFFF;transform:rotate(-45deg)}
-/* Thanksgiving (until the night after it): mock E's third step, as a band */
-.band{background:linear-gradient(135deg,#2A1960,#3E1238);border-radius:28px;padding:26px 20px 28px}
-.band h2{margin:22px 0 10px}
-.band p{color:#D9D3EE}
-.mic{display:flex;align-items:center;gap:14px;background:rgba(0,0,0,.35);border-radius:18px;padding:14px 16px;
-  margin-top:16px}
-.mic i{flex:none;width:52px;height:52px;border-radius:50%;background:var(--main);display:grid;place-items:center}
-.mic i::before{content:"";width:14px;height:22px;border-radius:7px;background:#FFFFFF}
-.mic b{font-weight:600;line-height:1.35}
-.mic b span{color:#D9D3EE;font-weight:400;font-size:15px}
-/* prices: the one place on the page with them */
+.checks.tight li{padding:12px 16px 12px 50px}
+.checks.tight li::before{top:13px}.checks.tight li::after{top:19px}
+/* three steps: the same rows, numbered */
+.steps{counter-reset:step}
+.steps li{counter-increment:step}
+.steps li::before{content:counter(step);display:grid;place-items:center;color:#FFFFFF;
+  font:800 13px/1 ui-rounded,"SF Pro Rounded",system-ui,sans-serif}
+.steps li::after{display:none}
+/* who it's for: plain rows, not buttons (their own pages come later) */
+.rows{margin:20px 0 0;padding:0;list-style:none}
+.rows li{padding:16px 0;border-top:1px solid var(--line);font-weight:600}
+.rows li:last-child{border-bottom:1px solid var(--line)}
+.rows li small{display:block;font-weight:400;font-size:15px;color:var(--text2);margin-top:2px}
+/* prices: the tiles, and the first question */
 .price{text-align:center}
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;text-align:left}
 .tile{background:var(--surface);border-radius:20px;padding:16px}
 .tile .amt{font:900 26px/1 ui-rounded,system-ui,sans-serif;margin-bottom:10px}
 .tile .amt small{display:block;margin-top:4px;font-size:13px;font-weight:600;color:var(--text2)}
 .tile p{color:var(--text2);font-size:14px}.tile p+p{margin-top:6px}.tile h3{font-size:16px;margin-bottom:4px}
+/* why we built it, and the questions: paragraphs, so their sentences keep their dots */
+.story p{margin-top:16px;font-size:18px}
+.story .sign{color:var(--text2);font-size:16px;font-weight:600}
+.faq h3{font-size:18px;margin-top:26px}
+.faq p{color:var(--text2);margin-top:6px}
 .final{text-align:center;background:radial-gradient(80% 100% at 50% 100%,#3E1238 0%,rgba(42,25,96,.6) 45%,
   rgba(0,0,0,0) 80%)}
 footer{padding:32px 16px;text-align:center;font-size:14px;color:var(--text2)}
@@ -153,11 +179,10 @@ footer a:hover{color:var(--text)}
   background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   transform:translateY(110%);transition:transform .3s}
 .stick.on{transform:none}
-.stick>div{max-width:528px;margin:0 auto;display:flex;align-items:center;gap:12px}
-.stick span{flex:1;font-size:14px;font-weight:600;line-height:1.25}
-.stick .pill{flex:none}
+.stick>div{max-width:528px;margin:0 auto}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-@media (min-width:760px){.hero{width:min(100%,calc(50svh * 640 / 915))}section{padding:72px 0}}
+@media (min-width:760px){.hero{width:min(100%,calc(50svh * 640 / 915))}section{padding:72px 0}
+  .nav .pill{display:inline-flex}.stick{display:none}body{padding-bottom:0}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;
   transition-duration:.01s!important;transition-delay:0s!important;animation-delay:0s!important}
   html{scroll-behavior:auto}
@@ -173,44 +198,58 @@ footer a:hover{color:var(--text)}
 </style></head><body>
 
 <header class="nav"><div class="wrap"><a class="brand" href="#top"><img src="/home/icon-64.png" alt="" width="32"
-height="32">Our Decades</a><a class="pill main small get" href="#notify" data-from="top">Email me</a></div></header>
+height="32"><span>Our Decades</span></a><a class="pill main small" href="https://try.our-decades.com/?from=site-top">Restore one photo free</a></div></header>
 
 <main id="top">
 <section class="glow" style="padding:14px 0 40px"><div class="wrap">
   <div class="hero"><div class="dev" data-words="Opening the old album|Dusting off the decades|Looking twice at each face|Here it comes" data-faces="[[0.515, 0.257], [0.767, 0.251], [0.294, 0.289], [0.145, 0.258], [0.762, 0.567], [0.445, 0.55]]" data-hold="Hold the photo to see the original" role="img"
     aria-label="A creased early-1900s family print being restored"><div class="clip"><img src="/home/worn.webp" alt="A creased 1910s family print, worn and faded" width="640" height="915" fetchpriority="high"><i class="shade" aria-hidden="true"></i><img class="after" src="/home/restored.webp" alt="The same 1910s family print, restored" width="640" height="915" fetchpriority="high"></div><canvas class="fx" aria-hidden="true"></canvas><span class="say"><i></i><span>Opening the old album</span></span></div></div>
-  <h1 class="center" style="margin:30px 0 18px">Old family photos, <span class="ink">restored</span> for you</h1>
-  <div id="herocta"><form class="notify" id="notify" action="https://api.our-decades.com/notify" method="post"><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Your email" aria-label="Your email"><input type="hidden" name="from" value="hero"><button class="pill main" type="submit">Email me when it’s live</button><p class="done" role="status" hidden>Thanks. We’ll email you the day it’s live</p><p class="err" role="alert" hidden></p></form></div><p class="note"><b>Coming soon to the App Store</b><br>Your first 15 photos are free</p>
+  <h1 class="center" style="margin:30px 0 12px">Old family photos, <span class="ink">restored</span> for you</h1>
+  <p class="cap center" style="margin:0 0 22px">Faded, scratched, turned orange? Watch one of yours come back. Free</p>
+  <div id="herocta"><a class="pill main wide" href="https://try.our-decades.com/?from=site-hero">Restore one photo free</a></div><p class="note">No sign-up. About a minute</p>
+  <div class="second"><form class="notify fold" id="notify" action="https://api.our-decades.com/notify" method="post"><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Your email" aria-label="Your email"><input type="hidden" name="from" value="hero"><button class="pill sec" type="submit">Email me when the app is live</button><p class="done" role="status" hidden>Thanks. We’ll email you the day it’s live</p><p class="err" role="alert" hidden></p></form></div>
 </div></section>
 
-<section style="padding-top:40px"><div class="wrap stack">
-  <h2>Point your iPhone at a whole album page</h2>
+<section id="gallery" style="padding-top:32px"><div class="wrap">
+  <h2>See what comes back</h2>
+  <p class="cap">Real photos from the 1970s, restored by Our Decades. Drag to compare</p>
+  <div data-gallery><div class="thumbs" role="group" aria-label="Choose a photo"><button type="button" aria-label="The family on the couch" aria-current="true"><img src="/home/g-family-couch-thumb.webp" alt="" width="48" height="48" loading="lazy" decoding="async"></button><button type="button" aria-label="The two at the doorway"><img src="/home/g-porch-thumb.webp" alt="" width="48" height="48" loading="lazy" decoding="async"></button><button type="button" aria-label="The wedding"><img src="/home/g-wedding-thumb.webp" alt="" width="48" height="48" loading="lazy" decoding="async"></button><button type="button" aria-label="The couple in the field"><img src="/home/g-couple-outside-thumb.webp" alt="" width="48" height="48" loading="lazy" decoding="async"></button><button type="button" aria-label="The man and the boy"><img src="/home/g-grandfather-kiss-thumb.webp" alt="" width="48" height="48" loading="lazy" decoding="async"></button><button type="button" aria-label="The family at dinner"><img src="/home/g-family-dinner-thumb.webp" alt="" width="48" height="48" loading="lazy" decoding="async"></button><button type="button" aria-label="The couple on the bed"><img src="/home/g-couple-indoors-thumb.webp" alt="" width="48" height="48" loading="lazy" decoding="async"></button></div><div class="view"><figure class="pair"><div class="ba" style="max-width:calc(70svh * 1.4981)"><img src="/home/g-family-couch-before.webp" alt="A 1970s family of six on a couch, the whole print turned red" width="1200" height="801" decoding="async"><img class="after" src="/home/g-family-couch-after.webp" alt="The same family photo, restored to its natural color" width="1200" height="801" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="The family on the couch: drag to compare before and after"></div><figcaption class="cap">The whole photo had turned red</figcaption></figure><figure class="pair" hidden><div class="ba" style="max-width:calc(70svh * 1.4888)"><img src="/home/g-porch-before.webp" alt="A man in a straw hat and an old woman with a walker at a doorway, the print faded to purple" width="1200" height="806" loading="lazy" decoding="async"><img class="after" src="/home/g-porch-after.webp" alt="The same doorway photo, restored" width="1200" height="806" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="The two at the doorway: drag to compare before and after"></div><figcaption class="cap">Fifty years had faded it to purple</figcaption></figure><figure class="pair" hidden><div class="ba" style="max-width:calc(70svh * 1.4907)"><img src="/home/g-wedding-before.webp" alt="A bride with a bouquet beside the groom and a woman in a wide hat, the print turned orange" width="1200" height="805" loading="lazy" decoding="async"><img class="after" src="/home/g-wedding-after.webp" alt="The same wedding photo restored, her dress white again" width="1200" height="805" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="The wedding: drag to compare before and after"></div><figcaption class="cap">Her dress was white. The film forgot</figcaption></figure><figure class="pair" hidden><div class="ba" style="max-width:calc(70svh * 0.6683)"><img src="/home/g-couple-outside-before.webp" alt="A woman and a man leaning on garden tools in a field, the sky faded to brown" width="802" height="1200" loading="lazy" decoding="async"><img class="after" src="/home/g-couple-outside-after.webp" alt="The same photo restored, under a blue sky" width="802" height="1200" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="The couple in the field: drag to compare before and after"></div><figcaption class="cap">The sky was blue that day</figcaption></figure><figure class="pair" hidden><div class="ba" style="max-width:calc(70svh * 0.6775)"><img src="/home/g-grandfather-kiss-before.webp" alt="A man kissing a small boy in a red shirt on the cheek, the print turned pink" width="813" height="1200" loading="lazy" decoding="async"><img class="after" src="/home/g-grandfather-kiss-after.webp" alt="The same photo of the man and the boy, restored" width="813" height="1200" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="The man and the boy: drag to compare before and after"></div><figcaption class="cap"></figcaption></figure><figure class="pair" hidden><div class="ba" style="max-width:calc(70svh * 1.5464)"><img src="/home/g-family-dinner-before.webp" alt="A family at a kitchen table set for dinner, the print faded and yellowed" width="1200" height="776" loading="lazy" decoding="async"><img class="after" src="/home/g-family-dinner-after.webp" alt="The same dinner photo, restored" width="1200" height="776" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="The family at dinner: drag to compare before and after"></div><figcaption class="cap"></figcaption></figure><figure class="pair" hidden><div class="ba" style="max-width:calc(70svh * 1.4870)"><img src="/home/g-couple-indoors-before.webp" alt="A man and a woman sitting on a bed in a pale room, the print washed out and pink" width="1200" height="807" loading="lazy" decoding="async"><img class="after" src="/home/g-couple-indoors-after.webp" alt="The same photo of the couple, restored" width="1200" height="807" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="The couple on the bed: drag to compare before and after"></div><figcaption class="cap"></figcaption></figure></div></div>
+  <p class="fine center" style="margin:18px 0 20px">Photos: US National Archives. Restored with AI</p>
+  <a class="pill main wide" href="https://try.our-decades.com/?from=site-gallery">Restore one of yours free</a>
+</div></section>
+
+<section style="padding-top:16px"><div class="wrap">
+  <h2 style="margin-bottom:18px">Three steps. No scanner</h2>
+  <ol class="checks steps"><li>Point your iPhone at the album page<small>Leave the photos where they are</small></li><li>Every photo comes back restored<small>Cut out, straightened, the fading and scratches gone</small></li><li>Keep them, name them, share them<small>Your family sees them free</small></li></ol>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap stack">
+  <div><h2>One shot. Every photo on the page</h2>
+  <p class="cap">Point at the whole page and each print becomes its own photo</p></div>
   <div class="album" role="img" aria-label="An album page with eight old prints, each one outlined"><img src="/home/page.webp" alt="An old album page with eight family prints" width="1023" height="727" loading="lazy" decoding="async"><svg viewBox="0 0 1023 727" preserveAspectRatio="none" aria-hidden="true"><polygon pathLength="1" style="--i:0" points="38,33 232,37 263,341 39,341"/><polygon pathLength="1" style="--i:1" points="252,36 487,36 476,332 281,339"/><polygon pathLength="1" style="--i:2" points="506,38 716,38 715,332 506,338"/><polygon pathLength="1" style="--i:3" points="747,33 957,36 949,345 747,345"/><polygon pathLength="1" style="--i:4" points="38,390 251,384 256,687 46,694"/><polygon pathLength="1" style="--i:5" points="274,394 492,394 498,660 274,668"/><polygon pathLength="1" style="--i:6" points="523,385 732,375 729,687 523,678"/><polygon pathLength="1" style="--i:7" points="789,407 935,412 935,651 783,645"/></svg><span class="found">8 photos found</span></div>
-  <p class="cap" style="margin-top:0">One scan. Every print on the page becomes its own photo</p>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-  <h2 style="margin-bottom:16px">It fixes only what’s wrong</h2>
-  <div class="ba"><img src="/home/gc_before.webp" alt="A family at the Grand Canyon in 1986: the print is yellowed and faded" width="1200" height="805" loading="lazy" decoding="async"><img class="after" src="/home/gc_after.webp" alt="The same print restored" width="1200" height="805" loading="lazy" decoding="async"><i class="handle"></i><span class="tag l">Before</span><span class="tag r">After</span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"></div>
-  <p class="cap">Fading, color casts, scratches and dust. No editing, no settings</p>
-  <p class="fine">An example print. Drag to compare</p>
+  <h2>Made to keep every face theirs</h2>
+  <p class="cap">We fix the photo, not the person. We’d rather do less than turn someone into a stranger. The original is always kept: hold the photo to see it</p>
 </div></section>
-<section style="padding-top:0" data-tg><div class="wrap"><div class="band"><span class="chip" data-thanksgiving>Thanksgiving is November 26</span><div class="mic" role="img" aria-label="Telling a photo’s story out loud"><i></i><b>“That’s the summer we drove out west…”<br><span>Hold the mic and talk. The words appear as you speak</span></b></div><h2>Ask who’s in it, while they’re at the table</h2><p>Record the story in their own voice, and add the names and the date. It all stays with the photo</p></div></div></section>
-<section style="padding-top:0"><div class="wrap"><ul class="checks">
-  <li>Made to keep every face theirs<small>We’d rather do less than turn someone into a stranger</small></li>
-  <li>The original is always kept<small>Hold the photo to see the original</small></li>
-  <li>Old photos already on your iPhone work too<small>Pick many at once, or a whole album</small></li>
-</ul></div></section>
 
-<section class="price"><div class="wrap">
+<section style="padding-top:0"><div class="wrap">
+  <h2>Start where you are</h2>
+  <ul class="rows"><li>Your parents’ albums<small>Save them while someone still knows who’s in them</small></li><li>A gift for Mom or Dad<small>Their albums, restored, on their phone and yours</small></li><li>Before a family event<small>The old photos everyone asks about, ready to show</small></li></ul>
+</div></section>
+
+<section class="price" style="padding-top:0"><div class="wrap">
   <h2>Your first 15 photos are <span class="ink">free</span></h2>
+  <ul class="checks tight" style="margin-top:22px;text-align:left"><li>Every photo on a page cut out and straightened</li><li>Restored: fading, color casts, scratches, dust</li><li>The original always kept</li><li>Names, dates and stories saved with each photo, in their own voice</li><li>Your family sees everything, free</li><li>Old photos already on your iPhone work too</li></ul>
   <div class="tiles">
-    <div class="tile"><div class="amt">$59.99 <small>a year</small></div><h3>Every photo restored</h3><p>No mark on
-      what you save or share</p></div>
     <div class="tile"><div class="amt">$19.99 <small>once</small></div><h3>100 photos</h3><p>No mark on what you
       save or share</p><p>No subscription. They never expire</p></div>
+    <div class="tile"><div class="amt">$59.99 <small>a year</small></div><h3>Every photo restored</h3><p>No mark on
+      what you save or share</p></div>
   </div>
   <p class="fine">The yearly plan renews automatically until you cancel in your iPhone’s Settings</p>
+  <p class="note" style="color:var(--text);font-weight:600;margin-top:18px">Try before you pay anything</p>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -220,23 +259,28 @@ height="32">Our Decades</a><a class="pill main small get" href="#notify" data-fr
   <p style="margin-top:16px"><a href="/privacy">Read the privacy policy</a></p>
 </div></section>
 
+<section style="padding-top:0"><div class="wrap story">
+  <h2>Why we built Our Decades</h2>
+  <p>Every family has them: albums in a closet, a shoebox of prints. The colors fade a little more each year. And every year there are fewer people who can say who’s in them.</p><p>Scanning them used to mean a weekend with a scanner, or mailing your only copies to a stranger. So most of us never did.</p><p>We built Our Decades so it takes an afternoon: point your phone at the page, and the photos come back. Then ask the people at the table who’s in them, while you still can.</p><p class="sign">The Our Decades team</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap faq">
+  <h2>Questions</h2>
+  <h3>Is it really free?</h3><p>One photo on this site is free, with no sign-up. In the app, your first 15 photos are free. After that it’s $19.99 for 100 photos, once, or $59.99 a year.</p><h3>Does it change people’s faces?</h3><p>It’s built not to. We fix fading, color and damage. With your OK, we check that every face is still the same person. Without it, we never touch faces. The original is always kept, one touch away.</p><h3>What happens to my photos?</h3><p>They’re yours. We never train AI on them, only your family sees them, and you can delete everything in Settings. Deleted means deleted. A photo you try on this site is deleted within 24 hours.</p><h3>Do I need a scanner?</h3><p>No. Your iPhone’s camera is enough, and the photos can stay in the album.</p><h3>Does it work on torn or badly damaged photos?</h3><p>Fading, color casts, scratches and dust come out well. A tear across a face is harder; try one free and see before you decide.</p><h3>Is it on Android?</h3><p>Not yet. The app is on iPhone, in the United States.</p><h3>How do I reach you?</h3><p>hello@our-decades.com. A person answers.</p>
+</div></section>
+
 <section class="final"><div class="wrap">
-  <h2>Start with one page</h2>
-  <p class="dim" style="margin:12px 0 24px;font-size:19px">Your first 15 photos are free</p>
-  <form class="notify" action="https://api.our-decades.com/notify" method="post"><input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="Your email" aria-label="Your email"><input type="hidden" name="from" value="final"><button class="pill main" type="submit">Email me when it’s live</button><p class="done" role="status" hidden>Thanks. We’ll email you the day it’s live</p><p class="err" role="alert" hidden></p></form><p class="note">Coming soon to the App Store</p>
+  <h2>Start with one photo</h2>
+  <div id="endcta" style="margin-top:24px"><a class="pill main wide" href="https://try.our-decades.com/?from=site-end">Restore one photo free</a></div>
+  <p class="note">No sign-up. About a minute</p>
 </div></section>
 </main>
 <footer><div><a href="/guides/">Guides</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/support">Support</a></div>
 <p>Our Decades is on iPhone, in the United States · © 2026 Redwood Oaks LLC</p></footer>
-<div class="stick" id="stick"><div><span>Our Decades<br><span class="dim" style="font-weight:400">Coming soon to the App Store</span></span><a class="pill main small get" href="#notify" data-from="bottom">Email me</a></div></div>
+<div class="stick" id="stick"><div><a class="pill main small wide" href="https://try.our-decades.com/?from=site-bar">Restore one photo free</a></div></div>
 <script>
 (function(){
   var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  // Thanksgiving (Thursday, November 26): a countdown on the band (the band itself goes by the line in <head>)
-  var d=Math.round((new Date(2026,10,26)-new Date(new Date().toDateString()))/864e5);
-  document.querySelectorAll('[data-thanksgiving]').forEach(function(el){
-    if(d>1)el.textContent='Thanksgiving is in '+d+' days';else if(d===1)el.textContent='Thanksgiving is tomorrow';
-    else if(d===0)el.textContent='Happy Thanksgiving'});
   // a print being restored, with the app's own words: "The scan" reads it (the try page's own, app/scan_light.py),
   // then the restored photo opens out from the face nearest the upper middle; held, then quietly back to the worn
   // print, and again. Only while it's on screen and the tab is in front. Reduce Motion: no light, a cross-fade
@@ -380,23 +424,44 @@ return {start:start,stop:stop,hand:hand,running:function(){return stage==="wait"
   // Before / After sliders: a range input over the picture (touch, mouse and arrow keys)
   document.querySelectorAll('.ba').forEach(function(ba){var r=ba.querySelector('input');
     function set(){ba.style.setProperty('--p',r.value+'%')}r.addEventListener('input',set);set()});
-  // "Email me when it's live": saved on our server, answered on the page (no mail app needed)
-  document.querySelectorAll('form.notify').forEach(function(f){f.addEventListener('submit',function(ev){
-    ev.preventDefault();var b=f.querySelector('button'),err=f.querySelector('.err');b.disabled=true;err.hidden=true;
+  // the gallery: a thumbnail shows its photo (the slider back in the middle); its pictures are fetched as a finger
+  // comes near the thumbnail, and the next photo's while one is shown
+  document.querySelectorAll('[data-gallery]').forEach(function(g){
+    var pairs=[].slice.call(g.querySelectorAll('.pair')),btns=[].slice.call(g.querySelectorAll('.thumbs button')),
+      warm={};
+    function fetchPair(i){if(i>=pairs.length||warm[i])return;warm[i]=1;
+      pairs[i].querySelectorAll('img').forEach(function(im){(new Image()).src=im.currentSrc||im.src})}
+    var view=g.querySelector('.view'),calm;
+    function show(i){var from=view.offsetHeight;pairs.forEach(function(p,j){p.hidden=j!==i});
+      btns.forEach(function(b,j){if(j===i)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});
+      var r=pairs[i].querySelector('input');r.value=50;r.dispatchEvent(new Event('input'));fetchPair(i+1);
+      // the height goes calmly from the last photo's to this one's (none with Reduce Motion)
+      clearTimeout(calm);view.style.transition='none';view.style.height='';var to=view.offsetHeight;
+      if(rm||from===to){view.style.overflow='';return}
+      view.style.overflow='hidden';view.style.height=from+'px';view.offsetHeight;
+      view.style.transition='height .3s ease';view.style.height=to+'px';
+      calm=setTimeout(function(){view.style.height=view.style.transition=view.style.overflow=''},320)}
+    btns.forEach(function(b,i){b.addEventListener('click',function(){show(i)});
+      ['pointerenter','pointerdown','focus'].forEach(function(n){b.addEventListener(n,function(){fetchPair(i)})})});
+    new IntersectionObserver(function(es,ob){if(es[0].isIntersecting){ob.disconnect();fetchPair(1)}},
+      {rootMargin:'200px'}).observe(g)});
+  // "Email me when the app is live": the second button opens the box; saved on our server, answered on the page
+  document.querySelectorAll('form.notify').forEach(function(f){
+    var b=f.querySelector('button');
+    b.addEventListener('click',function(ev){if(!f.classList.contains('fold'))return;ev.preventDefault();
+      f.classList.remove('fold');var i=f.querySelector('input[type=email]');i.focus()});
+    f.addEventListener('submit',function(ev){
+    ev.preventDefault();var err=f.querySelector('.err');b.disabled=true;err.hidden=true;
     fetch(f.action+'?js=1',{method:'POST',body:new URLSearchParams(new FormData(f))})
       .then(function(r){if(!r.ok)throw r;return r.json()})
-      .then(function(){document.querySelectorAll('form.notify').forEach(function(g){
-        g.querySelectorAll('input,button').forEach(function(x){x.hidden=true});g.querySelector('.done').hidden=false})})
+      .then(function(){f.querySelectorAll('input,button').forEach(function(x){x.hidden=true});
+        f.querySelector('.done').hidden=false})
       .catch(function(r){b.disabled=false;err.textContent=r&&r.status===422?'That email doesn’t look right':
         'That didn’t go through. Try again';err.hidden=false})})});
-  // the top bar's and bottom bar's "Email me": to the first box, counted as theirs
-  document.querySelectorAll('a[href="#notify"]').forEach(function(a){a.addEventListener('click',function(ev){
-    var box=document.getElementById('notify');if(!box)return;ev.preventDefault();
-    var w=box.querySelector('input[name=from]');if(w&&a.getAttribute('data-from'))w.value=a.getAttribute('data-from');
-    box.scrollIntoView({behavior:rm?'auto':'smooth',block:'center'});
-    var i=box.querySelector('input[type=email]');if(i&&!i.hidden)i.focus({preventScroll:true})})});
-  // the bottom bar, once the first button has scrolled away
-  var s=document.getElementById('stick');
-  new IntersectionObserver(function(es){s.classList.toggle('on',!es[0].isIntersecting)}).observe(document.getElementById('herocta'));
+  // the bottom bar, once the first button has scrolled away, and not while the last one is on screen
+  var s=document.getElementById('stick'),seen={};
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){seen[e.target.id]=e.isIntersecting});
+    s.classList.toggle('on',seen.herocta===false&&!seen.endcta)});
+  ['herocta','endcta'].forEach(function(id){so.observe(document.getElementById(id))});
 })();
 </script></body></html>
